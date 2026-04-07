@@ -1,0 +1,1955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Students in Business — Kanata North</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0d1117;
+  --ink-2: #161b22;
+  --ink-3: #21262d;
+  --mist: #f6f8fa;
+  --mist-2: #eef1f5;
+  --line: #d0d7de;
+  --blue: #1a6cf6;
+  --blue-dark: #1558d6;
+  --blue-light: rgba(26,108,246,0.08);
+  --emerald: #1a7f4b;
+  --emerald-bg: rgba(26,127,75,0.08);
+  --amber: #b45309;
+  --amber-bg: rgba(180,83,9,0.08);
+  --white: #ffffff;
+  --text-body: #333c47;
+  --text-muted: #636e7b;
+  --text-faint: #959fa9;
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --shadow-xs: 0 1px 2px rgba(13,17,23,0.06);
+  --shadow-sm: 0 1px 4px rgba(13,17,23,0.06), 0 2px 8px rgba(13,17,23,0.04);
+  --shadow: 0 4px 12px rgba(13,17,23,0.08), 0 2px 6px rgba(13,17,23,0.04);
+  --shadow-lg: 0 16px 40px rgba(13,17,23,0.12), 0 6px 14px rgba(13,17,23,0.06);
+  --shadow-xl: 0 28px 56px rgba(13,17,23,0.18);
+  --transition: 0.2s cubic-bezier(0.4,0,0.2,1);
+  --serif: 'DM Serif Display', serif;
+  --sans: 'DM Sans', sans-serif;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--white);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal { opacity:0; transform:translateY(32px); transition:opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1); }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.reveal-delay-1 { transition-delay:0.08s; }
+.reveal-delay-2 { transition-delay:0.16s; }
+.reveal-delay-3 { transition-delay:0.24s; }
+.reveal-delay-4 { transition-delay:0.32s; }
+.reveal-left { opacity:0; transform:translateX(-36px); transition:opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1); }
+.reveal-left.visible { opacity:1; transform:translateX(0); }
+.reveal-right { opacity:0; transform:translateX(36px); transition:opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1); }
+.reveal-right.visible { opacity:1; transform:translateX(0); }
+
+/* ── PAGES ── */
+.page { display:none; }
+.page.active { display:block; }
+
+/* ── NAV ── */
+#mainNav {
+  position:fixed; top:0; left:0; right:0; z-index:900;
+  height:60px; display:flex; align-items:center; justify-content:space-between;
+  padding:0 40px;
+  background:rgba(255,255,255,0.9);
+  backdrop-filter:blur(20px) saturate(180%);
+  border-bottom:1px solid rgba(208,215,222,0.5);
+  transition:box-shadow var(--transition);
+}
+#mainNav.scrolled { box-shadow:var(--shadow-sm); }
+.nav-brand { display:flex; align-items:center; gap:9px; cursor:pointer; text-decoration:none; }
+.nav-mark { width:30px; height:30px; border-radius:8px; background:var(--ink); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-weight:400; font-size:13px; color:white; letter-spacing:-0.02em; }
+.nav-name { font-weight:600; font-size:14px; color:var(--ink); letter-spacing:-0.01em; }
+.nav-links { display:flex; align-items:center; gap:1px; }
+.nav-btn { padding:7px 12px; border-radius:var(--radius-sm); font-size:13.5px; font-weight:500; color:var(--text-body); background:none; border:none; cursor:pointer; transition:all var(--transition); font-family:var(--sans); }
+.nav-btn:hover { background:var(--mist); color:var(--ink); }
+.nav-actions { display:flex; gap:7px; align-items:center; }
+.btn-outline-sm { padding:7px 16px; border-radius:var(--radius-sm); border:1.5px solid var(--line); background:white; font-size:13.5px; font-weight:600; color:var(--ink); cursor:pointer; transition:all var(--transition); font-family:var(--sans); }
+.btn-outline-sm:hover { border-color:var(--ink); background:var(--mist); }
+.btn-fill-sm { padding:7px 16px; border-radius:var(--radius-sm); background:var(--ink); border:none; font-size:13.5px; font-weight:600; color:white; cursor:pointer; transition:all var(--transition); font-family:var(--sans); }
+.btn-fill-sm:hover { background:var(--ink-2); }
+
+/* ── BUTTONS ── */
+.btn-primary { display:inline-flex; align-items:center; gap:7px; padding:12px 24px; border-radius:var(--radius); background:var(--ink); color:white; border:none; font-family:var(--sans); font-size:14.5px; font-weight:600; cursor:pointer; transition:all var(--transition); letter-spacing:-0.01em; }
+.btn-primary:hover { background:var(--blue); transform:translateY(-1px); box-shadow:0 6px 20px rgba(26,108,246,0.22); }
+.btn-secondary { display:inline-flex; align-items:center; gap:7px; padding:12px 24px; border-radius:var(--radius); background:var(--mist); color:var(--ink); border:1.5px solid var(--line); font-family:var(--sans); font-size:14.5px; font-weight:600; cursor:pointer; transition:all var(--transition); }
+.btn-secondary:hover { background:var(--mist-2); border-color:var(--ink); transform:translateY(-1px); }
+.btn-blue { display:inline-flex; align-items:center; gap:7px; padding:11px 22px; border-radius:var(--radius); background:var(--blue); color:white; border:none; font-family:var(--sans); font-size:14.5px; font-weight:600; cursor:pointer; transition:all var(--transition); }
+.btn-blue:hover { background:var(--blue-dark); transform:translateY(-1px); box-shadow:0 6px 20px rgba(26,108,246,0.28); }
+
+/* ── HERO ── */
+.hero { min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:120px 80px 80px; position:relative; overflow:hidden; background:var(--ink); }
+.hero-bg { position:absolute; inset:0; z-index:0; background: radial-gradient(ellipse 850px 650px at 62% 38%, rgba(26,108,246,0.17) 0%, transparent 65%), radial-gradient(ellipse 480px 380px at 12% 78%, rgba(26,127,75,0.09) 0%, transparent 60%), radial-gradient(ellipse 380px 280px at 88% 8%, rgba(180,83,9,0.07) 0%, transparent 55%); }
+.hero-grid-lines { position:absolute; inset:0; z-index:0; opacity:0.035; background-image:linear-gradient(rgba(255,255,255,0.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.5) 1px,transparent 1px); background-size:56px 56px; }
+.hero-inner { max-width:1180px; margin:0 auto; position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+.hero-eyebrow { display:inline-flex; align-items:center; gap:8px; padding:4px 12px; border-radius:100px; border:1px solid rgba(255,255,255,0.13); background:rgba(255,255,255,0.05); font-size:11.5px; font-weight:600; color:rgba(255,255,255,0.65); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:24px; }
+.hero-eyebrow-dot { width:6px; height:6px; border-radius:50%; background:#4ade80; box-shadow:0 0 6px #4ade80; }
+.hero h1 { font-family:var(--serif); font-size:62px; font-weight:400; line-height:1.0; color:white; letter-spacing:-0.02em; margin-bottom:22px; }
+.hero h1 em { font-style:italic; color:rgba(255,255,255,0.45); }
+.hero-body { font-size:16.5px; color:rgba(255,255,255,0.58); line-height:1.7; margin-bottom:36px; max-width:470px; }
+.hero-ctas { display:flex; gap:12px; flex-wrap:wrap; }
+.hero-card { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.09); border-radius:var(--radius-lg); padding:28px; backdrop-filter:blur(12px); }
+.hero-tabs { display:flex; gap:3px; margin-bottom:22px; background:rgba(255,255,255,0.05); border-radius:9px; padding:3px; }
+.hero-tab { flex:1; padding:8px; border-radius:7px; font-size:13px; font-weight:600; cursor:pointer; transition:all var(--transition); border:none; color:rgba(255,255,255,0.45); background:none; font-family:var(--sans); }
+.hero-tab.active { background:rgba(255,255,255,0.11); color:white; }
+.hero-steps { display:flex; flex-direction:column; gap:10px; }
+.hero-step { display:flex; align-items:center; gap:14px; padding:12px 16px; border-radius:var(--radius); background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); transition:all 0.3s; animation:stepIn 0.5s cubic-bezier(0.16,1,0.3,1) both; }
+.hero-step:nth-child(1){animation-delay:.04s} .hero-step:nth-child(2){animation-delay:.13s} .hero-step:nth-child(3){animation-delay:.22s}
+@keyframes stepIn { from{opacity:0;transform:translateX(18px)} to{opacity:1;transform:translateX(0)} }
+.step-num { width:34px; height:34px; border-radius:50%; flex-shrink:0; background:rgba(26,108,246,0.22); border:1px solid rgba(26,108,246,0.36); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:#93c5fd; font-family:var(--serif); }
+.step-label { font-size:13.5px; font-weight:600; color:rgba(255,255,255,0.88); }
+.step-sub { font-size:11.5px; color:rgba(255,255,255,0.38); margin-top:1px; }
+
+/* ── SECTIONS ── */
+.section { padding:96px 80px; }
+.section-inner { max-width:1180px; margin:0 auto; }
+.section-eyebrow { font-size:11.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--blue); margin-bottom:12px; }
+.section-title { font-family:var(--serif); font-size:42px; font-weight:400; line-height:1.08; color:var(--ink); letter-spacing:-0.02em; margin-bottom:14px; }
+.section-body { font-size:16.5px; color:var(--text-muted); line-height:1.7; max-width:540px; }
+
+/* ── VALUE CARDS ── */
+.value-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:60px; }
+.value-card { padding:32px 28px; border-radius:var(--radius-lg); border:1px solid var(--line); background:white; box-shadow:var(--shadow-xs); transition:all var(--transition); position:relative; overflow:hidden; }
+.value-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2.5px; background:linear-gradient(90deg,var(--blue),#818cf8); opacity:0; transition:opacity var(--transition); }
+.value-card:hover { transform:translateY(-5px); box-shadow:var(--shadow-lg); }
+.value-card:hover::before { opacity:1; }
+.value-icon { width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:20px; margin-bottom:18px; }
+.vi-blue{background:rgba(26,108,246,0.07)} .vi-green{background:rgba(26,127,75,0.07)} .vi-amber{background:rgba(180,83,9,0.07)}
+.value-card h3 { font-size:17px; font-weight:700; color:var(--ink); margin-bottom:9px; letter-spacing:-0.01em; }
+.value-card p { font-size:14px; color:var(--text-muted); line-height:1.65; }
+
+/* ── HOW IT WORKS ── */
+.how-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; }
+.how-steps { display:flex; flex-direction:column; }
+.how-step { display:flex; gap:18px; padding:22px 0; border-bottom:1px solid var(--line); cursor:pointer; transition:all var(--transition); }
+.how-step:last-child { border-bottom:none; }
+.how-step-num { width:38px; height:38px; border-radius:50%; flex-shrink:0; background:var(--mist); color:var(--text-faint); font-family:var(--serif); font-weight:400; font-size:14px; display:flex; align-items:center; justify-content:center; transition:all var(--transition); }
+.how-step.active .how-step-num, .how-step:hover .how-step-num { background:var(--ink); color:white; }
+.how-step h4 { font-size:15.5px; font-weight:600; color:var(--ink); margin-bottom:3px; }
+.how-step p { font-size:13.5px; color:var(--text-muted); line-height:1.55; }
+.how-visual { position:sticky; top:88px; background:var(--ink); border-radius:var(--radius-xl); padding:36px; color:white; min-height:360px; overflow:hidden; }
+.how-visual::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 80% 20%, rgba(26,108,246,0.32), transparent 58%); }
+.tracks-list { position:relative; z-index:1; display:flex; flex-direction:column; gap:9px; }
+.track-item { display:flex; align-items:center; gap:13px; padding:12px 16px; border-radius:var(--radius); background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.07); transition:all var(--transition); }
+.track-item:hover { background:rgba(255,255,255,0.09); }
+.track-emoji { font-size:18px; }
+.track-name { font-size:13.5px; font-weight:600; color:white; }
+.track-desc { font-size:11.5px; color:rgba(255,255,255,0.42); margin-top:1px; }
+
+/* ── PARTNER ── */
+.partner-strip { padding:36px 80px; background:var(--mist); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.partner-inner { max-width:1180px; margin:0 auto; display:flex; align-items:center; gap:28px; flex-wrap:wrap; }
+.partner-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.09em; color:var(--text-faint); white-space:nowrap; }
+.partner-chip { display:flex; align-items:center; gap:8px; padding:9px 18px; background:white; border-radius:var(--radius-sm); border:1px solid var(--line); font-size:13.5px; font-weight:700; color:var(--ink); letter-spacing:-0.01em; box-shadow:var(--shadow-xs); }
+.partner-chip img { width:20px; height:20px; object-fit:contain; }
+
+/* ── AUTH MODAL ── */
+.modal-overlay { display:none; position:fixed; inset:0; z-index:9000; background:rgba(13,17,23,0.52); backdrop-filter:blur(7px); align-items:center; justify-content:center; padding:24px; }
+.modal-overlay.open { display:flex; }
+.modal { background:white; border-radius:var(--radius-xl); padding:44px; max-width:480px; width:100%; box-shadow:var(--shadow-xl); position:relative; animation:modalIn 0.32s cubic-bezier(0.16,1,0.3,1); }
+@keyframes modalIn { from{opacity:0;transform:scale(0.93) translateY(14px)} to{opacity:1;transform:scale(1) translateY(0)} }
+.modal-close { position:absolute; top:18px; right:18px; width:30px; height:30px; border-radius:50%; background:var(--mist); border:none; cursor:pointer; font-size:15px; display:flex; align-items:center; justify-content:center; color:var(--text-muted); transition:all var(--transition); }
+.modal-close:hover { background:var(--mist-2); color:var(--ink); }
+.modal-logo { display:flex; align-items:center; gap:9px; margin-bottom:28px; }
+.modal-logo-mark { width:32px; height:32px; border-radius:8px; background:var(--ink); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-weight:400; font-size:13px; color:white; }
+.modal-logo-name { font-weight:600; font-size:14px; color:var(--ink); }
+.modal-title { font-family:var(--serif); font-size:26px; font-weight:400; color:var(--ink); letter-spacing:-0.02em; margin-bottom:7px; }
+.modal-sub { font-size:13.5px; color:var(--text-muted); margin-bottom:24px; }
+.auth-tabs { display:flex; gap:0; margin-bottom:22px; border-bottom:2px solid var(--line); }
+.auth-tab { padding:9px 18px; font-size:13.5px; font-weight:600; cursor:pointer; border:none; background:none; color:var(--text-muted); font-family:var(--sans); border-bottom:2px solid transparent; margin-bottom:-2px; transition:all var(--transition); }
+.auth-tab.active { color:var(--ink); border-bottom-color:var(--ink); }
+.role-selector { display:grid; grid-template-columns:1fr 1fr; gap:9px; margin-bottom:18px; }
+.role-card { padding:14px; border-radius:var(--radius); border:2px solid var(--line); cursor:pointer; transition:all var(--transition); text-align:center; background:white; }
+.role-card:hover { border-color:var(--ink); }
+.role-card.selected { border-color:var(--ink); background:var(--mist); }
+.role-icon { font-size:22px; margin-bottom:5px; }
+.role-name { font-size:13.5px; font-weight:700; color:var(--ink); }
+.role-desc { font-size:11px; color:var(--text-muted); margin-top:1px; }
+/* Google sign-in button */
+.btn-google { display:flex; align-items:center; justify-content:center; gap:10px; width:100%; padding:11px; border-radius:var(--radius-sm); border:1.5px solid var(--line); background:white; font-family:var(--sans); font-size:14px; font-weight:600; color:var(--ink); cursor:pointer; transition:all var(--transition); margin-bottom:16px; }
+.btn-google:hover { background:var(--mist); border-color:#c9d1d9; }
+.btn-google svg { width:18px; height:18px; flex-shrink:0; }
+.auth-divider { display:flex; align-items:center; gap:12px; margin:0 0 16px; }
+.auth-divider span { font-size:12px; color:var(--text-faint); white-space:nowrap; }
+.auth-divider::before,.auth-divider::after { content:''; flex:1; height:1px; background:var(--line); }
+/* "no account" prompt */
+.no-account-note { background:var(--mist); border:1px solid var(--line); border-radius:var(--radius-sm); padding:12px 16px; margin-top:14px; font-size:13px; color:var(--text-muted); display:none; }
+.no-account-note.show { display:block; }
+.no-account-note a { color:var(--blue); font-weight:600; cursor:pointer; }
+
+/* ── FIELDS ── */
+.field { margin-bottom:16px; }
+.field label { display:block; font-size:13px; font-weight:600; color:var(--ink); margin-bottom:6px; }
+.field input,.field select,.field textarea { width:100%; padding:11px 14px; border-radius:var(--radius-sm); border:1.5px solid var(--line); background:white; font-family:var(--sans); font-size:14.5px; color:var(--ink); transition:all var(--transition); outline:none; }
+.field input:focus,.field select:focus,.field textarea:focus { border-color:var(--blue); box-shadow:0 0 0 3px rgba(26,108,246,0.07); }
+.field textarea { resize:vertical; min-height:106px; }
+.field-hint { font-size:11.5px; color:var(--text-faint); margin-top:4px; }
+.field-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.other-elaboration { margin-top:9px; display:none; }
+.other-elaboration.show { display:block; }
+.field-error { font-size:11.5px; color:#c0392b; margin-top:4px; display:none; }
+.field-error.show { display:block; }
+
+/* ── FORM PAGES ── */
+.form-page { min-height:100vh; padding:96px 40px 56px; background:var(--mist); }
+.form-wrap { max-width:700px; margin:0 auto; }
+.form-back { display:inline-flex; align-items:center; gap:5px; font-size:13.5px; font-weight:600; color:var(--text-muted); background:none; border:none; cursor:pointer; margin-bottom:28px; transition:color var(--transition); }
+.form-back:hover { color:var(--ink); }
+.form-title { font-family:var(--serif); font-size:34px; font-weight:400; color:var(--ink); letter-spacing:-0.02em; margin-bottom:5px; }
+.form-sub { font-size:14.5px; color:var(--text-muted); margin-bottom:32px; }
+.step-dots { display:flex; gap:5px; margin-bottom:24px; }
+.sdot { height:4px; border-radius:2px; flex:1; background:var(--line); transition:all var(--transition); }
+.sdot.done { background:var(--blue); }
+.sdot.current { background:var(--ink); }
+.form-card { background:white; border-radius:var(--radius-xl); padding:36px; box-shadow:var(--shadow); border:1px solid var(--line); }
+.form-step { display:none; }
+.form-step.active { display:block; }
+.step-heading { font-family:var(--serif); font-size:21px; font-weight:400; color:var(--ink); letter-spacing:-0.02em; margin-bottom:5px; }
+.step-sub { font-size:13.5px; color:var(--text-muted); margin-bottom:22px; }
+.form-actions { display:flex; align-items:center; justify-content:space-between; margin-top:24px; padding-top:22px; border-top:1px solid var(--line); }
+.btn-form-next { padding:11px 22px; border-radius:var(--radius-sm); background:var(--ink); color:white; font-family:var(--sans); font-size:14px; font-weight:600; border:none; cursor:pointer; transition:all var(--transition); }
+.btn-form-next:hover { background:var(--blue); }
+.btn-form-back { padding:11px 18px; border-radius:var(--radius-sm); background:none; color:var(--text-muted); font-family:var(--sans); font-size:14px; font-weight:600; border:1.5px solid var(--line); cursor:pointer; transition:all var(--transition); }
+.btn-form-back:hover { border-color:var(--ink); color:var(--ink); }
+.btn-form-submit { padding:11px 22px; border-radius:var(--radius-sm); background:var(--emerald); color:white; font-family:var(--sans); font-size:14px; font-weight:600; border:none; cursor:pointer; transition:all var(--transition); }
+.btn-form-submit:hover { filter:brightness(1.05); }
+
+/* Track selection */
+.track-grid-sel { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+.track-sel-card { padding:16px 12px; border-radius:var(--radius); border:2px solid var(--line); cursor:pointer; transition:all var(--transition); text-align:center; }
+.track-sel-card:hover { border-color:var(--ink); }
+.track-sel-card.selected { border-color:var(--blue); background:var(--blue-light); }
+.track-sel-icon { font-size:22px; margin-bottom:7px; }
+.track-sel-name { font-size:13px; font-weight:600; color:var(--ink); }
+
+/* Upload */
+.upload-zone { border:2px dashed var(--line); border-radius:var(--radius-lg); padding:40px; text-align:center; cursor:pointer; transition:all var(--transition); background:var(--mist); }
+.upload-zone:hover,.upload-zone.filled { border-color:var(--blue); background:var(--blue-light); }
+.upload-icon { font-size:36px; margin-bottom:10px; }
+.upload-label { font-size:15px; font-weight:600; color:var(--ink); margin-bottom:5px; }
+.upload-hint { font-size:12px; color:var(--text-faint); }
+.upload-file-info { display:none; align-items:center; gap:10px; padding:12px 16px; background:var(--mist); border-radius:var(--radius-sm); margin-top:12px; border:1px solid var(--line); }
+.upload-file-info.show { display:flex; }
+.upload-file-name { font-size:13.5px; font-weight:600; color:var(--ink); flex:1; }
+.upload-file-size { font-size:12px; color:var(--text-faint); }
+.resource-link { font-size:13.5px; font-weight:600; color:var(--blue); cursor:pointer; }
+.resource-link:hover { text-decoration:underline; }
+.return-link { display:inline-flex; align-items:center; gap:5px; font-size:13.5px; font-weight:600; color:var(--blue); cursor:pointer; margin-top:12px; }
+.return-link:hover { text-decoration:underline; }
+
+/* Clauses */
+.clauses { display:flex; flex-direction:column; gap:10px; }
+.clause { display:flex; align-items:flex-start; gap:14px; padding:14px 16px; border-radius:var(--radius-sm); background:var(--mist); border:2px solid var(--line); cursor:pointer; transition:all var(--transition); }
+.clause.checked { border-color:var(--emerald); background:var(--emerald-bg); }
+.clause-box { width:22px; height:22px; border-radius:5px; border:2px solid var(--line); flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; color:transparent; transition:all var(--transition); }
+.clause.checked .clause-box { background:var(--emerald); border-color:var(--emerald); color:white; }
+.clause p { font-size:13.5px; color:var(--text-body); line-height:1.55; }
+
+/* Success */
+.success-wrap { display:none; }
+.success-wrap.show { display:block; }
+.success-card { background:white; border-radius:var(--radius-xl); padding:52px 40px; text-align:center; border:1px solid var(--line); box-shadow:var(--shadow-lg); }
+.success-icon { width:76px; height:76px; border-radius:50%; background:linear-gradient(135deg,var(--emerald),#047857); display:flex; align-items:center; justify-content:center; font-size:34px; margin:0 auto 22px; box-shadow:0 10px 28px rgba(26,127,75,0.28); animation:popIn 0.5s cubic-bezier(0.175,0.885,0.32,1.275); }
+@keyframes popIn { from{opacity:0;transform:scale(0.5)} to{opacity:1;transform:scale(1)} }
+.success-title { font-family:var(--serif); font-size:28px; font-weight:400; color:var(--ink); margin-bottom:9px; letter-spacing:-0.02em; }
+.success-body { font-size:14.5px; color:var(--text-muted); line-height:1.65; max-width:370px; margin:0 auto 24px; }
+.timeline-pills { display:flex; gap:7px; justify-content:center; flex-wrap:wrap; margin-bottom:28px; }
+.tpill { padding:6px 13px; border-radius:100px; background:var(--mist); font-size:11.5px; font-weight:500; color:var(--text-muted); border:1px solid var(--line); }
+.tpill strong { color:var(--ink); }
+.success-actions { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+
+/* Employer multi-step */
+.emp-step-nav { display:flex; gap:0; margin-bottom:28px; border-bottom:2px solid var(--line); }
+.emp-step-tab { padding:10px 20px; font-size:13.5px; font-weight:600; cursor:default; border:none; background:none; color:var(--text-faint); font-family:var(--sans); border-bottom:2px solid transparent; margin-bottom:-2px; }
+.emp-step-tab.active { color:var(--ink); border-bottom-color:var(--ink); }
+.emp-step-tab.done { color:var(--emerald); }
+.emp-form-step { display:none; }
+.emp-form-step.active { display:block; }
+
+/* KNBA link */
+.knba-link { display:inline-flex; align-items:center; gap:5px; margin-top:8px; padding:7px 12px; background:var(--blue-light); border-radius:var(--radius-sm); font-size:13px; font-weight:600; color:var(--blue); text-decoration:none; transition:all var(--transition); }
+.knba-link:hover { background:rgba(26,108,246,0.14); }
+
+/* ── DASHBOARDS ── */
+.dash-layout { display:grid; grid-template-columns:252px 1fr; min-height:100vh; }
+.dash-sidebar { background:var(--ink); padding:60px 0 0; position:fixed; width:252px; height:100vh; overflow-y:auto; display:flex; flex-direction:column; z-index:100; }
+.dash-main { margin-left:252px; padding:80px 44px 56px; background:var(--mist); min-height:100vh; }
+.sidebar-logo { padding:0 18px 24px; border-bottom:1px solid rgba(255,255,255,0.07); margin-bottom:14px; }
+.sidebar-logo-mark { width:32px; height:32px; border-radius:8px; background:white; display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-weight:400; font-size:13px; color:var(--ink); margin-bottom:9px; }
+.sidebar-logo-name { font-size:14px; font-weight:600; color:white; }
+.sidebar-logo-user { font-size:11.5px; color:rgba(255,255,255,0.38); margin-top:1px; }
+.sidebar-nav { padding:0 9px; flex:1; }
+.sidebar-link { display:flex; align-items:center; gap:9px; padding:10px 13px; border-radius:var(--radius-sm); color:rgba(255,255,255,0.52); font-size:13.5px; font-weight:500; cursor:pointer; transition:all var(--transition); margin-bottom:1px; background:none; border:none; width:100%; text-align:left; font-family:var(--sans); }
+.sidebar-link:hover,.sidebar-link.active { background:rgba(255,255,255,0.07); color:white; }
+.sidebar-link .sicon { font-size:15px; width:19px; text-align:center; }
+.sidebar-bottom { padding:14px 18px; border-top:1px solid rgba(255,255,255,0.07); }
+.sidebar-user-name { font-size:13.5px; font-weight:600; color:white; }
+.sidebar-user-role { font-size:11px; color:rgba(255,255,255,0.38); margin-top:1px; }
+.sidebar-signout { display:flex; align-items:center; gap:7px; padding:8px 0; font-size:13px; color:rgba(255,255,255,0.38); cursor:pointer; background:none; border:none; font-family:var(--sans); transition:color var(--transition); margin-top:9px; }
+.sidebar-signout:hover { color:rgba(255,255,255,0.75); }
+
+/* Dash content */
+.dash-header { margin-bottom:28px; }
+.dash-title { font-family:var(--serif); font-size:28px; font-weight:400; color:var(--ink); letter-spacing:-0.02em; }
+.dash-sub { font-size:14.5px; color:var(--text-muted); margin-top:3px; }
+.stat-row { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:24px; }
+.stat-card { background:white; border-radius:var(--radius); padding:22px; border:1px solid var(--line); box-shadow:var(--shadow-xs); }
+.stat-label { font-size:11.5px; font-weight:600; text-transform:uppercase; letter-spacing:0.07em; color:var(--text-faint); margin-bottom:7px; }
+.stat-val { font-family:var(--serif); font-size:30px; font-weight:400; color:var(--ink); letter-spacing:-0.02em; }
+.stat-change { font-size:11.5px; color:var(--emerald); margin-top:3px; font-weight:600; }
+
+/* Status tracker */
+.status-hero { background:var(--ink); border-radius:var(--radius-xl); padding:36px; color:white; margin-bottom:24px; position:relative; overflow:hidden; }
+.status-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 80% 30%, rgba(26,108,246,0.32), transparent 58%); }
+.status-hero-inner { position:relative; z-index:1; }
+.status-eyebrow { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.42); margin-bottom:9px; }
+.status-name { font-family:var(--serif); font-size:30px; font-weight:400; margin-bottom:3px; }
+.status-school { font-size:13.5px; color:rgba(255,255,255,0.52); margin-bottom:18px; }
+.status-badge { display:inline-flex; align-items:center; gap:7px; padding:7px 14px; border-radius:100px; background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.13); font-size:12.5px; font-weight:600; color:rgba(255,255,255,0.88); }
+.status-badge-dot { width:6px; height:6px; border-radius:50%; background:#fbbf24; animation:blink 2s infinite; }
+@keyframes blink { 0%,100%{opacity:1}50%{opacity:0.3} }
+.tracker-card { background:white; border-radius:var(--radius-lg); padding:28px; border:1px solid var(--line); box-shadow:var(--shadow-xs); margin-bottom:20px; }
+.tracker-title { font-size:15px; font-weight:600; color:var(--ink); margin-bottom:24px; }
+.tracker-steps { display:flex; align-items:flex-start; justify-content:space-between; position:relative; }
+.tracker-steps::before { content:''; position:absolute; top:16px; left:0; right:0; height:2px; background:var(--line); z-index:0; }
+.tracker-step { display:flex; flex-direction:column; align-items:center; flex:1; position:relative; z-index:1; }
+.tracker-circle { width:32px; height:32px; border-radius:50%; background:white; border:2px solid var(--line); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:var(--text-faint); margin-bottom:7px; transition:all var(--transition); }
+.tracker-step.done .tracker-circle { background:var(--blue); border-color:var(--blue); color:white; }
+.tracker-step.current .tracker-circle { background:var(--ink); border-color:var(--ink); color:white; box-shadow:0 0 0 3px rgba(13,17,23,0.09); }
+.tracker-step-label { font-size:10.5px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-faint); text-align:center; }
+.tracker-step.done .tracker-step-label,.tracker-step.current .tracker-step-label { color:var(--ink); }
+.detail-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:20px; }
+.detail-card { background:white; border-radius:var(--radius); padding:18px; border:1px solid var(--line); box-shadow:var(--shadow-xs); }
+.detail-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:var(--text-faint); margin-bottom:6px; }
+.detail-val { font-size:14.5px; font-weight:600; color:var(--ink); }
+.detail-val.soft { font-size:13px; font-weight:400; color:var(--text-muted); line-height:1.55; }
+
+/* Student browse */
+.filter-bar { display:flex; gap:9px; align-items:center; margin-bottom:20px; flex-wrap:wrap; }
+.filter-input { padding:9px 14px 9px 36px; border-radius:var(--radius-sm); border:1.5px solid var(--line); font-family:var(--sans); font-size:13.5px; color:var(--ink); background:white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 11px center; outline:none; flex:1; min-width:190px; transition:border-color var(--transition); }
+.filter-input:focus { border-color:var(--blue); }
+.filter-select { padding:9px 13px; border-radius:var(--radius-sm); border:1.5px solid var(--line); font-family:var(--sans); font-size:13.5px; color:var(--ink); background:white; cursor:pointer; outline:none; min-width:140px; transition:border-color var(--transition); }
+.filter-select:focus { border-color:var(--blue); }
+.students-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); gap:14px; }
+.scard { background:white; border-radius:var(--radius-lg); padding:22px; border:1px solid var(--line); box-shadow:var(--shadow-xs); transition:all var(--transition); cursor:pointer; }
+.scard:hover { transform:translateY(-3px); box-shadow:var(--shadow-lg); border-color:var(--blue); }
+.scard-top { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:12px; }
+.scard-avatar { width:40px; height:40px; border-radius:50%; background:var(--ink); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-weight:400; font-size:16px; color:white; }
+.badge-v { padding:3px 9px; border-radius:100px; font-size:11px; font-weight:700; background:var(--emerald-bg); color:var(--emerald); }
+.badge-p { padding:3px 9px; border-radius:100px; font-size:11px; font-weight:700; background:var(--amber-bg); color:var(--amber); }
+.scard-name { font-size:16px; font-weight:700; color:var(--ink); margin-bottom:2px; letter-spacing:-0.01em; }
+.scard-school { font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+.tag-row { display:flex; gap:4px; flex-wrap:wrap; margin-bottom:10px; }
+.ttag { padding:3px 9px; border-radius:100px; font-size:11px; font-weight:600; }
+.tt-tech { background:rgba(26,108,246,0.07); color:var(--blue); }
+.tt-mkt { background:rgba(124,58,237,0.07); color:#7c3aed; }
+.tt-biz { background:var(--amber-bg); color:var(--amber); }
+.tt-fin { background:var(--emerald-bg); color:var(--emerald); }
+.tt-hr { background:rgba(236,72,153,0.07); color:#be185d; }
+.scard-skills { font-size:12.5px; color:var(--text-muted); margin-bottom:12px; }
+.scard-footer { display:flex; align-items:center; justify-content:space-between; padding-top:12px; border-top:1px solid var(--line); }
+.avail-label { font-size:12.5px; color:var(--text-muted); }
+.avail-label strong { color:var(--ink); }
+.btn-intro { padding:7px 13px; border-radius:var(--radius-sm); background:var(--ink); font-size:12px; font-weight:700; color:white; border:none; cursor:pointer; transition:all var(--transition); font-family:var(--sans); }
+.btn-intro:hover { background:var(--blue); }
+.app-table { background:white; border-radius:var(--radius-lg); border:1px solid var(--line); overflow:hidden; box-shadow:var(--shadow-xs); }
+.app-table-header { display:grid; grid-template-columns:2fr 1fr 1fr 1fr 130px; gap:14px; padding:12px 22px; background:var(--mist); border-bottom:1px solid var(--line); font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-faint); }
+.app-row { display:grid; grid-template-columns:2fr 1fr 1fr 1fr 130px; gap:14px; padding:16px 22px; border-bottom:1px solid var(--line); align-items:center; transition:background var(--transition); cursor:pointer; }
+.app-row:last-child { border-bottom:none; }
+.app-row:hover { background:var(--mist); }
+.app-name { font-size:14.5px; font-weight:700; color:var(--ink); }
+.app-school { font-size:11.5px; color:var(--text-faint); margin-top:1px; }
+.app-cell { font-size:13.5px; color:var(--text-body); }
+.status-pill { padding:3px 11px; border-radius:100px; font-size:11px; font-weight:700; display:inline-block; }
+.sp-review { background:var(--amber-bg); color:var(--amber); }
+.sp-approved { background:var(--emerald-bg); color:var(--emerald); }
+.sp-matched { background:var(--blue-light); color:var(--blue); }
+
+/* Profile modal */
+.pmodal { max-width:540px; max-height:86vh; overflow-y:auto; }
+.pmodal-avatar { width:58px; height:58px; border-radius:50%; background:var(--ink); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-weight:400; font-size:24px; color:white; margin-bottom:14px; }
+.pmodal-bio { font-size:13.5px; color:var(--text-body); line-height:1.7; background:var(--mist); padding:14px 16px; border-radius:var(--radius-sm); margin-bottom:18px; }
+.pmodal-sec { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-faint); margin-bottom:9px; }
+.skills-row { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:18px; }
+.skill-chip { padding:4px 11px; border-radius:100px; background:var(--mist); font-size:12px; font-weight:600; color:var(--ink); border:1px solid var(--line); }
+.pmeta { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:22px; }
+.pmeta-item .pk { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:var(--text-faint); margin-bottom:2px; }
+.pmeta-item .pv { font-size:14.5px; font-weight:600; color:var(--ink); }
+.modal-btns { display:flex; gap:9px; }
+.btn-modal-outline { padding:10px 18px; border-radius:var(--radius-sm); border:1.5px solid var(--line); font-size:13.5px; font-weight:600; color:var(--ink); cursor:pointer; background:white; transition:all var(--transition); font-family:var(--sans); display:flex; align-items:center; gap:5px; }
+.btn-modal-outline:hover { border-color:var(--ink); }
+.btn-modal-fill { flex:1; padding:10px 18px; border-radius:var(--radius-sm); background:var(--ink); font-size:13.5px; font-weight:700; color:white; border:none; cursor:pointer; transition:all var(--transition); font-family:var(--sans); }
+.btn-modal-fill:hover { background:var(--blue); }
+
+/* Resources */
+.resources-hero { padding:116px 80px 56px; background:var(--ink); }
+.resources-inner { max-width:880px; margin:0 auto; }
+.resource-cards { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:44px; }
+.rc { background:white; border-radius:var(--radius-xl); overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow); transition:all var(--transition); }
+.rc:hover { transform:translateY(-3px); box-shadow:var(--shadow-lg); }
+.rc-header { padding:24px 24px 18px; border-bottom:1px solid var(--line); }
+.rc-icon { font-size:30px; margin-bottom:10px; }
+.rc-title { font-family:var(--serif); font-size:19px; font-weight:400; color:var(--ink); margin-bottom:5px; letter-spacing:-0.01em; }
+.rc-desc { font-size:13px; color:var(--text-muted); line-height:1.5; }
+.rc-body { padding:18px 24px; }
+.rc-link { display:flex; align-items:center; gap:9px; padding:9px 0; border-bottom:1px solid var(--line); text-decoration:none; transition:all var(--transition); }
+.rc-link:last-child { border-bottom:none; }
+.rc-link:hover { padding-left:3px; }
+.rc-link-icon { font-size:15px; width:26px; }
+.rc-link-text { font-size:13px; font-weight:600; color:var(--blue); flex:1; }
+.rc-link-source { font-size:11px; color:var(--text-faint); }
+.rc-link-arrow { color:var(--text-faint); font-size:12px; transition:transform var(--transition); }
+.rc-link:hover .rc-link-arrow { transform:translateX(3px); color:var(--blue); }
+
+/* About/FAQ */
+.about-hero { padding:116px 80px 76px; background:var(--ink); position:relative; overflow:hidden; }
+.about-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 680px 480px at 70% 50%, rgba(26,108,246,0.18), transparent); }
+.faq-list { display:flex; flex-direction:column; gap:7px; }
+.faq-item { background:white; border-radius:var(--radius); border:1px solid var(--line); overflow:hidden; }
+.faq-q { padding:16px 20px; font-size:14.5px; font-weight:600; color:var(--ink); cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:14px; user-select:none; transition:background var(--transition); }
+.faq-q:hover { background:var(--mist); }
+.faq-chev { font-size:11px; color:var(--text-faint); transition:transform 0.25s; flex-shrink:0; }
+.faq-item.open .faq-chev { transform:rotate(180deg); }
+.faq-a { max-height:0; overflow:hidden; transition:max-height 0.3s ease, padding 0.3s; font-size:13.5px; line-height:1.65; color:var(--text-muted); padding:0 20px; }
+.faq-item.open .faq-a { max-height:220px; padding:0 20px 16px; }
+
+/* Intro modal */
+.intro-note { background:var(--mist); border-radius:var(--radius-sm); padding:14px 16px; margin-bottom:18px; border:1px solid var(--line); font-size:13px; color:var(--text-body); line-height:1.6; }
+
+/* Gate banner */
+.gate-banner { display:flex; align-items:center; justify-content:space-between; gap:14px; background:var(--mist); border:1px solid var(--line); border-radius:var(--radius); padding:12px 18px; margin-bottom:20px; }
+.gate-banner p { font-size:13.5px; color:var(--text-muted); }
+.gate-banner strong { color:var(--ink); }
+
+/* Footer */
+footer { background:var(--ink); color:rgba(255,255,255,0.46); padding:44px 80px; }
+.footer-inner { max-width:1180px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px; }
+.footer-brand { font-family:var(--serif); font-size:17px; font-weight:400; color:white; margin-bottom:3px; letter-spacing:-0.02em; }
+.footer-tagline { font-size:12.5px; }
+.footer-email a { color:#93c5fd; text-decoration:none; font-weight:500; }
+.footer-email a:hover { text-decoration:underline; }
+.footer-note { font-size:11px; margin-top:5px; color:rgba(255,255,255,0.28); }
+
+/* Toast */
+.toast { position:fixed; bottom:24px; right:24px; z-index:9999; background:var(--ink); color:white; padding:12px 18px; border-radius:var(--radius); font-size:13.5px; font-weight:500; box-shadow:var(--shadow-xl); display:flex; align-items:center; gap:9px; max-width:320px; transform:translateY(70px); opacity:0; transition:all 0.3s cubic-bezier(0.4,0,0.2,1); pointer-events:none; }
+.toast.show { transform:translateY(0); opacity:1; }
+.toast.error { background:#991b1b; }
+
+/* Responsive */
+@media (max-width:960px) {
+  .hero { padding:106px 28px 64px; }
+  .hero-inner { grid-template-columns:1fr; gap:36px; }
+  .hero h1 { font-size:42px; }
+  .section { padding:68px 28px; }
+  .section-title { font-size:34px; }
+  .value-grid { grid-template-columns:1fr; }
+  .how-grid { grid-template-columns:1fr; }
+  .how-visual { position:static; }
+  .partner-strip { padding:28px; }
+  .detail-grid { grid-template-columns:1fr; }
+  .resource-cards { grid-template-columns:1fr; }
+  .stat-row { grid-template-columns:1fr 1fr; }
+  .dash-sidebar { display:none; }
+  .dash-main { margin-left:0; padding:80px 20px 44px; }
+  footer { padding:36px 28px; }
+  .footer-inner { flex-direction:column; gap:10px; }
+  #mainNav { padding:0 18px; }
+  .nav-links { display:none; }
+  .field-row { grid-template-columns:1fr; }
+  .track-grid-sel { grid-template-columns:repeat(2,1fr); }
+  .app-table-header,.app-row { grid-template-columns:2fr 1fr 110px; }
+  .app-table-header .hide-mob,.app-row .hide-mob { display:none; }
+  .resources-hero,.about-hero { padding:100px 28px 52px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ NAV -->
+<nav id="mainNav">
+  <div class="nav-brand" onclick="showPage('home')">
+    <div class="nav-mark">SiB</div>
+    <span class="nav-name">Students in Business</span>
+  </div>
+  <div class="nav-links">
+    <button class="nav-btn" onclick="showPage('home')">Home</button>
+    <button class="nav-btn" onclick="showPage('about')">How It Works</button>
+    <button class="nav-btn" onclick="showPage('resources')">Resources</button>
+    <button class="nav-btn" id="navApplyBtn" onclick="handleApplyNav()">Apply</button>
+  </div>
+  <div class="nav-actions" id="navActions">
+    <button class="btn-outline-sm" onclick="openAuth('login')">Sign In</button>
+    <button class="btn-fill-sm" onclick="openAuth('signup')">Get Started</button>
+  </div>
+</nav>
+
+<!-- ══════════════════ TOAST -->
+<div class="toast" id="toast"><span id="toastMsg"></span></div>
+
+<!-- ══════════════════ AUTH MODAL -->
+<div class="modal-overlay" id="authModal">
+  <div class="modal" style="max-width:460px;">
+    <button class="modal-close" onclick="closeModal('authModal')">×</button>
+    <div class="modal-logo">
+      <div class="modal-logo-mark">SiB</div>
+      <span class="modal-logo-name">Students in Business</span>
+    </div>
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="authTabLogin" onclick="switchAuthTab('login')">Sign In</button>
+      <button class="auth-tab" id="authTabSignup" onclick="switchAuthTab('signup')">Create Account</button>
+    </div>
+
+    <!-- LOGIN -->
+    <div id="authLogin">
+      <button class="btn-google" onclick="handleGoogleAuth()">
+        <svg viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+        Continue with Google
+      </button>
+      <div class="auth-divider"><span>or sign in with email</span></div>
+      <div class="field"><label>Email Address</label><input type="email" id="loginEmail" placeholder="your@email.com"></div>
+      <div class="field"><label>Password</label><input type="password" id="loginPassword" placeholder="••••••••"></div>
+      <button class="btn-primary" style="width:100%;justify-content:center;margin-top:2px;" onclick="doLogin()">Sign In →</button>
+      <div class="no-account-note" id="noAccountNote">
+        No account found with that email. <a onclick="switchAuthTab('signup')">Create one instead?</a>
+      </div>
+      <p style="text-align:center;margin-top:14px;font-size:12.5px;color:var(--text-faint);">Don't have an account? <span style="color:var(--blue);cursor:pointer;font-weight:600;" onclick="switchAuthTab('signup')">Sign up</span></p>
+    </div>
+
+    <!-- SIGNUP -->
+    <div id="authSignup" style="display:none;">
+      <button class="btn-google" onclick="handleGoogleAuth()">
+        <svg viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+        Continue with Google
+      </button>
+      <div class="auth-divider"><span>or create account with email</span></div>
+      <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px;">I am a:</p>
+      <div class="role-selector" id="rolePicker">
+        <div class="role-card selected" id="roleStudent" onclick="selectRole('student')"><div class="role-icon">🎓</div><div class="role-name">Student</div><div class="role-desc">Grade 10–12, co-op applicant</div></div>
+        <div class="role-card" id="roleEmployer" onclick="selectRole('employer')"><div class="role-icon">🏢</div><div class="role-name">Employer</div><div class="role-desc">Company looking to host a student</div></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>First Name</label><input type="text" id="signupFirst" placeholder="First"></div>
+        <div class="field"><label>Last Name</label><input type="text" id="signupLast" placeholder="Last"></div>
+      </div>
+      <div class="field"><label>Email Address</label><input type="email" id="signupEmail" placeholder="your@email.com"></div>
+      <div class="field"><label>Password <span style="color:var(--text-faint);font-weight:400;">(min. 8 characters)</span></label><input type="password" id="signupPass" placeholder="••••••••"></div>
+      <button class="btn-primary" style="width:100%;justify-content:center;margin-top:2px;" onclick="doSignup()">Create Account →</button>
+      <p style="text-align:center;margin-top:14px;font-size:12.5px;color:var(--text-faint);">Already have an account? <span style="color:var(--blue);cursor:pointer;font-weight:600;" onclick="switchAuthTab('login')">Sign in</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ HOME -->
+<div id="page-home" class="page active">
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid-lines"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow reveal"><div class="hero-eyebrow-dot"></div>Now Accepting Applications · Spring 2026</div>
+        <h1 class="reveal reveal-delay-1">Real work.<br><em>Real Kanata.</em><br>Real experience.</h1>
+        <p class="hero-body reveal reveal-delay-2">Students in Business connects Ottawa-area high school co-op students with vetted Kanata North companies across tech, marketing, finance, and more.</p>
+        <div class="hero-ctas reveal reveal-delay-3">
+          <button class="btn-primary" onclick="requireAuth('student-apply')">Apply as a Student →</button>
+          <button class="btn-secondary" style="border-color:rgba(255,255,255,0.18);color:rgba(255,255,255,0.78);background:rgba(255,255,255,0.05);" onclick="requireAuth('employer-register')">Register Your Company</button>
+        </div>
+      </div>
+      <div class="reveal reveal-right reveal-delay-2">
+        <div class="hero-card">
+          <div class="hero-tabs">
+            <button class="hero-tab active" onclick="switchHeroTab(this,'students')">For Students</button>
+            <button class="hero-tab" onclick="switchHeroTab(this,'employers')">For Employers</button>
+          </div>
+          <div class="hero-steps" id="hstudents">
+            <div class="hero-step"><div class="step-num">1</div><div><div class="step-label">Apply & get screened</div><div class="step-sub">Complete the 5-step application</div></div></div>
+            <div class="hero-step"><div class="step-num">2</div><div><div class="step-label">Get matched</div><div class="step-sub">Coordinator pairs you with the right employer</div></div></div>
+            <div class="hero-step"><div class="step-num">3</div><div><div class="step-label">Start your placement</div><div class="step-sub">Earn co-op credit at a Kanata North company</div></div></div>
+          </div>
+          <div class="hero-steps" id="hemployers" style="display:none;">
+            <div class="hero-step"><div class="step-num">1</div><div><div class="step-label">Register your company</div><div class="step-sub">Describe your needs in 10 minutes</div></div></div>
+            <div class="hero-step"><div class="step-num">2</div><div><div class="step-label">Browse student profiles</div><div class="step-sub">Filter by track, availability & skills</div></div></div>
+            <div class="hero-step"><div class="step-num">3</div><div><div class="step-label">Host a student</div><div class="step-sub">Zero cost — build your talent pipeline</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE -->
+  <section class="section" style="background:white;">
+    <div class="section-inner">
+      <div style="max-width:620px;">
+        <div class="section-eyebrow reveal">Why SiB</div>
+        <h2 class="section-title reveal reveal-delay-1">Three gaps. One platform.</h2>
+        <p class="section-body reveal reveal-delay-2">SiB fills the missing link between Kanata North's best companies and the next generation of Ottawa talent — at zero cost to everyone.</p>
+      </div>
+      <div class="value-grid">
+        <div class="value-card reveal reveal-delay-1"><div class="value-icon vi-blue">🎓</div><h3>Vetted Students</h3><p>Every applicant completes a 5-step screening process. Resumes reviewed. Commitment verified. Only serious students reach employer profiles.</p></div>
+        <div class="value-card reveal reveal-delay-2"><div class="value-icon vi-green">💼</div><h3>Zero Cost to Employers</h3><p>No fees, no subscriptions. Co-op placements are a genuine zero-cost way to bring motivated, school-board-supervised talent into your team.</p></div>
+        <div class="value-card reveal reveal-delay-3"><div class="value-icon vi-amber">✅</div><h3>Co-op Credit Guaranteed</h3><p>All placements run through Ottawa-area school co-op programs. School boards confirm credit — no extra paperwork for companies.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-eyebrow reveal">The Process</div>
+      <h2 class="section-title reveal reveal-delay-1">From application to placement</h2>
+      <p class="section-body reveal reveal-delay-2">A transparent, coordinator-managed process designed to make every match count.</p>
+      <div class="how-grid" style="margin-top:52px;">
+        <div class="how-steps reveal reveal-left">
+          <div class="how-step active"><div class="how-step-num">1</div><div><h4>Student applies online</h4><p>Complete personal info, track selection, screening questions, resume upload, and commitment agreement.</p></div></div>
+          <div class="how-step"><div class="how-step-num">2</div><div><h4>Application reviewed</h4><p>Reviewed within 3–5 business days. Human judgment — not automated scoring.</p></div></div>
+          <div class="how-step"><div class="how-step-num">3</div><div><h4>Profile goes live</h4><p>Approved students appear in the employer browse portal. Name initial shown — full details only after intro confirmation.</p></div></div>
+          <div class="how-step"><div class="how-step-num">4</div><div><h4>Employer requests an intro</h4><p>Company requests an introduction. Coordinator schedules a brief meeting between both parties.</p></div></div>
+          <div class="how-step"><div class="how-step-num">5</div><div><h4>Placement confirmed</h4><p>Both sides agree. Coordinator updates the match — your dashboard shows placement details.</p></div></div>
+        </div>
+        <div class="how-visual reveal reveal-right">
+          <div style="font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.38);margin-bottom:14px;position:relative;z-index:1;">Placement Tracks</div>
+          <div class="tracks-list">
+            <div class="track-item"><span class="track-emoji">💻</span><div><div class="track-name">Technology</div><div class="track-desc">Dev, IT, product, data</div></div></div>
+            <div class="track-item"><span class="track-emoji">📣</span><div><div class="track-name">Marketing</div><div class="track-desc">Social, content, events</div></div></div>
+            <div class="track-item"><span class="track-emoji">📊</span><div><div class="track-name">Business Operations</div><div class="track-desc">Strategy, admin, ops</div></div></div>
+            <div class="track-item"><span class="track-emoji">💰</span><div><div class="track-name">Finance</div><div class="track-desc">Accounting, analysis</div></div></div>
+            <div class="track-item"><span class="track-emoji">👥</span><div><div class="track-name">HR / Admin</div><div class="track-desc">People ops, coordination</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNER -->
+  <div class="partner-strip reveal">
+    <div class="partner-inner">
+      <span class="partner-label">Official Partner</span>
+      <div class="partner-chip">
+        <img src="https://kanatanorthba.com/wp-content/uploads/2021/03/KNBA-logo-horizontal.png" alt="KNBA" onerror="this.style.display='none'">
+        Kanata North Business Association
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div><div class="footer-brand">Students in Business</div><div class="footer-tagline">Co-op Placement Initiative · Kanata North</div></div>
+      <div style="text-align:right;">
+        <div class="footer-email">Coordinator: <a href="mailto:ysaadaldin08@gmail.com">ysaadaldin08@gmail.com</a></div>
+        <div class="footer-note">Built &amp; managed by Yousef Saadaldin · Spring 2026</div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════ STUDENT APPLY -->
+<div id="page-student-apply" class="page form-page">
+  <div class="form-wrap">
+    <button class="form-back" onclick="showPage('home')">← Back to Home</button>
+    <h1 class="form-title">Student Application</h1>
+    <p class="form-sub">5 steps · ~12 minutes · Reviewed within 3–5 business days</p>
+
+    <div id="studentFormMain">
+      <div class="step-dots">
+        <div class="sdot current" id="sd0"></div><div class="sdot" id="sd1"></div>
+        <div class="sdot" id="sd2"></div><div class="sdot" id="sd3"></div>
+        <div class="sdot" id="sd4"></div>
+      </div>
+      <div class="form-card">
+
+        <!-- STEP 1: PERSONAL INFO -->
+        <div class="form-step active" id="ss0">
+          <div class="step-heading">Personal Info</div>
+          <div class="step-sub">Step 1 of 5 — Basic details about you</div>
+          <div class="field-row">
+            <div class="field"><label>First Name *</label><input type="text" id="s1first" placeholder="First name"></div>
+            <div class="field"><label>Last Name *</label><input type="text" id="s1last" placeholder="Last name"></div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label>Email Address *</label>
+              <input type="email" id="s1email" placeholder="your@email.com">
+              <div class="field-error" id="s1emailErr">Please enter a valid email address.</div>
+            </div>
+            <div class="field">
+              <label>Phone Number <span style="color:var(--text-faint);font-weight:400;">(optional)</span></label>
+              <input type="tel" id="s1phone" placeholder="613-555-0100">
+              <div class="field-error" id="s1phoneErr">Please enter a valid phone number (e.g. 613-555-0100).</div>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>School Name *</label><input type="text" id="s1school" placeholder="e.g. Earl of March SS"></div>
+            <div class="field"><label>Grade *</label>
+              <select id="s1grade">
+                <option value="">Select grade</option>
+                <option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label>Student Number *</label><input type="text" id="s1studentnum" placeholder="From your school ID card"><div class="field-hint">Required for verification. Kept confidential.</div></div>
+          <div class="field"><label>Co-op Teacher Name <span style="color:var(--text-faint);font-weight:400;">(optional)</span></label><input type="text" placeholder="Teacher's name if known"></div>
+          <div class="form-actions">
+            <div style="font-size:13px;color:var(--text-faint);">Step 1 of 5</div>
+            <button class="btn-form-next" onclick="nextSStep(0)">Continue →</button>
+          </div>
+        </div>
+
+        <!-- STEP 2: TRACK SELECTION -->
+        <div class="form-step" id="ss1">
+          <div class="step-heading">Track Selection</div>
+          <div class="step-sub">Step 2 of 5 — Choose the areas you want to work in. This drives your employer matching. You can select more than one.</div>
+          <div class="track-grid-sel" id="trackSelGrid">
+            <div class="track-sel-card" onclick="toggleTrackSel(this,'Technology')"><div class="track-sel-icon">💻</div><div class="track-sel-name">Technology</div></div>
+            <div class="track-sel-card" onclick="toggleTrackSel(this,'Marketing')"><div class="track-sel-icon">📣</div><div class="track-sel-name">Marketing</div></div>
+            <div class="track-sel-card" onclick="toggleTrackSel(this,'Business Ops')"><div class="track-sel-icon">📊</div><div class="track-sel-name">Business Ops</div></div>
+            <div class="track-sel-card" onclick="toggleTrackSel(this,'Finance')"><div class="track-sel-icon">💰</div><div class="track-sel-name">Finance</div></div>
+            <div class="track-sel-card" onclick="toggleTrackSel(this,'HR / Admin')"><div class="track-sel-icon">👥</div><div class="track-sel-name">HR / Admin</div></div>
+          </div>
+          <div id="trackSelCount" class="field-hint" style="margin-top:10px;">0 selected</div>
+          <div class="form-actions">
+            <button class="btn-form-back" onclick="prevSStep(1)">← Back</button>
+            <button class="btn-form-next" onclick="nextSStep(1)">Continue →</button>
+          </div>
+        </div>
+
+        <!-- STEP 3: AVAILABILITY -->
+        <div class="form-step" id="ss2">
+          <div class="step-heading">Availability</div>
+          <div class="step-sub">Step 3 of 5 — You must be available at least 14 hours per week.</div>
+          <div class="field-row">
+            <div class="field">
+              <label>Hours Available Per Week *</label>
+              <input type="number" id="s3hours" min="14" max="40" placeholder="e.g. 20">
+              <div class="field-hint">Minimum 14 hrs/week to proceed.</div>
+            </div>
+            <div class="field">
+              <label>Preferred Start Date *</label>
+              <input type="date" id="s3date">
+              <div class="field-hint">Cannot be earlier than today.</div>
+            </div>
+          </div>
+          <div class="field">
+            <label>Can you commute independently? *</label>
+            <select id="s3commute" onchange="handleOther(this,'s3commuteOther')">
+              <option value="">Select one</option>
+              <option>Yes — I have my own transportation</option>
+              <option>Yes — I can take public transit</option>
+              <option>No — I would need support</option>
+              <option value="other">Other</option>
+            </select>
+            <div class="other-elaboration" id="s3commuteOther">
+              <input type="text" id="s3commuteDesc" placeholder="Please describe your commute situation... (optional)">
+            </div>
+          </div>
+          <div class="field">
+            <label>Parent / Guardian Authorization *</label>
+            <select id="s3auth">
+              <option value="">Select one</option>
+              <option value="yes">Yes — My parent/guardian has authorized this application</option>
+              <option value="no">No — I still need to get authorization</option>
+            </select>
+            <div class="field-hint">Parent/guardian approval is required to proceed.</div>
+          </div>
+          <div class="form-actions">
+            <button class="btn-form-back" onclick="prevSStep(2)">← Back</button>
+            <button class="btn-form-next" onclick="nextSStep(2)">Continue →</button>
+          </div>
+        </div>
+
+        <!-- STEP 4: SCREENING QUESTIONS -->
+        <div class="form-step" id="ss3">
+          <div class="step-heading">Screening Questions</div>
+          <div class="step-sub">Step 4 of 5 — Answer honestly. These help match you with the right employer.</div>
+          <div class="field"><label>Why do you want a co-op placement? *</label><textarea id="s4q1" placeholder="What are you hoping to learn or gain from this experience?"></textarea></div>
+          <div class="field"><label>Describe a project or activity where you worked independently. *</label><textarea id="s4q2" placeholder="What was the project? What challenges did you face?"></textarea></div>
+          <div class="field"><label>Any scheduling conflicts during placement? *</label><textarea id="s4q3" placeholder="Exams, sports, other commitments..."></textarea></div>
+          <div class="form-actions">
+            <button class="btn-form-back" onclick="prevSStep(3)">← Back</button>
+            <button class="btn-form-next" onclick="nextSStep(3)">Continue →</button>
+          </div>
+        </div>
+
+        <!-- STEP 5: RESUME + COMMITMENT -->
+        <div class="form-step" id="ss4">
+          <div class="step-heading">Resume Upload</div>
+          <div class="step-sub">Step 5 of 5 — PDF only, max 2MB. Employers will see this as part of your profile.</div>
+          <div class="upload-zone" id="uploadZone" onclick="document.getElementById('resumeInput').click()">
+            <div class="upload-icon">📄</div>
+            <div class="upload-label" id="uploadLabel">Click to upload your resume</div>
+            <div class="upload-hint">PDF only · Max 2MB · Naming: FirstName_LastName_Resume.pdf</div>
+          </div>
+          <div class="upload-file-info" id="uploadFileInfo">
+            <span>📎</span>
+            <span class="upload-file-name" id="uploadFileName"></span>
+            <span class="upload-file-size" id="uploadFileSize"></span>
+          </div>
+          <input type="file" id="resumeInput" accept=".pdf" style="display:none" onchange="handleUpload(this)">
+          <div style="margin-top:18px;padding:16px 18px;background:rgba(26,108,246,0.04);border-radius:var(--radius-sm);border:1px solid rgba(26,108,246,0.11);">
+            <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:7px;">Need help with your resume?</div>
+            <div style="font-size:13px;color:var(--text-muted);margin-bottom:9px;">Visit the Resource Centre for templates, guides, and tips.</div>
+            <a class="resource-link" onclick="goToResourceFromForm()">→ Go to Resource Centre</a>
+            <div><a class="return-link" id="returnToAppLink" onclick="returnToApplication()" style="display:none;">↩ Return to saved application</a></div>
+          </div>
+
+          <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--line);">
+            <div class="step-heading" style="font-size:19px;margin-bottom:5px;">Commitment Agreement</div>
+            <div class="step-sub">All boxes must be checked to submit.</div>
+            <div class="clauses">
+              <div class="clause" onclick="toggleClause(this)"><div class="clause-box">✓</div><p>I confirm that I am a Grade 10–12 student enrolled in an Ottawa-area high school and am eligible for co-op credit.</p></div>
+              <div class="clause" onclick="toggleClause(this)"><div class="clause-box">✓</div><p>I understand that I may not contact employers directly — all communication is routed through the SiB coordinator.</p></div>
+              <div class="clause" onclick="toggleClause(this)"><div class="clause-box">✓</div><p>I consent to my profile information (excluding full name and contact details) being shared with vetted employers on this platform.</p></div>
+              <div class="clause" onclick="toggleClause(this)"><div class="clause-box">✓</div><p>I agree to maintain professional conduct throughout the placement and notify the coordinator of any issues or concerns.</p></div>
+              <div class="clause" onclick="toggleClause(this)"><div class="clause-box">✓</div><p>I understand that I cannot reapply within the same semester if I am screened out due to misrepresentation.</p></div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn-form-back" onclick="prevSStep(4)">← Back</button>
+            <button class="btn-form-submit" onclick="submitStudentApp()">Submit Application ✓</button>
+          </div>
+        </div>
+
+      </div><!-- /form-card -->
+    </div><!-- /studentFormMain -->
+
+    <div class="success-wrap" id="studentSuccess">
+      <div class="success-card">
+        <div class="success-icon">🎉</div>
+        <div class="success-title">Application Submitted!</div>
+        <div class="success-body">Your application is in the SiB queue. You'll receive a confirmation email shortly. Here's what happens next:</div>
+        <div class="timeline-pills">
+          <div class="tpill"><strong>Now</strong> Confirmation email sent</div>
+          <div class="tpill"><strong>3–5 days</strong> Coordinator review</div>
+          <div class="tpill"><strong>If approved</strong> Profile goes live</div>
+          <div class="tpill"><strong>Match found</strong> You'll be notified</div>
+        </div>
+        <div class="success-actions">
+          <button class="btn-primary" onclick="showPage('student-dashboard')">View Your Dashboard →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ EMPLOYER REGISTER -->
+<div id="page-employer-register" class="page form-page">
+  <div class="form-wrap" style="max-width:740px;">
+    <button class="form-back" onclick="showPage('home')">← Back to Home</button>
+    <h1 class="form-title">Employer Registration</h1>
+    <p class="form-sub">~10 minutes · Reviewed within 3–5 business days before portal access is granted</p>
+
+    <div id="empFormMain">
+      <!-- Step nav -->
+      <div class="emp-step-nav">
+        <button class="emp-step-tab active" id="etab0">1 · Company & Contact</button>
+        <button class="emp-step-tab" id="etab1">2 · Placement Details</button>
+        <button class="emp-step-tab" id="etab2">3 · Commitment</button>
+      </div>
+      <div class="form-card">
+
+        <!-- EMP STEP 1: Company + Contact -->
+        <div class="emp-form-step active" id="es0">
+          <div class="step-heading">Company Information</div>
+          <div class="step-sub" style="margin-bottom:22px;">Tell us about your company.</div>
+          <div class="field-row">
+            <div class="field"><label>Company Name *</label><input type="text" id="e1company" placeholder="e.g. Acme Technologies"></div>
+            <div class="field"><label>Industry *</label>
+              <select id="e1industry" onchange="handleOther(this,'industryOther')">
+                <option value="">Select industry</option>
+                <option>Software / Technology</option><option>Marketing / Communications</option>
+                <option>Finance / Accounting</option><option>Healthcare</option>
+                <option>Consulting</option><option>Manufacturing / Engineering</option>
+                <option>Non-Profit / Government</option><option value="other">Other</option>
+              </select>
+              <div class="other-elaboration" id="industryOther"><input type="text" placeholder="Please describe your industry..."></div>
+            </div>
+          </div>
+          <div class="field"><label>Company Website *</label><input type="url" id="e1website" placeholder="https://yourcompany.com"></div>
+          <div style="margin-top:6px;padding-top:22px;border-top:1px solid var(--line);">
+            <div class="step-heading" style="font-size:19px;margin-bottom:5px;">Primary Contact</div>
+            <div class="step-sub" style="margin-bottom:18px;">The person we'll communicate with about this placement.</div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Contact Name *</label><input type="text" id="e1cname" placeholder="Full name"></div>
+            <div class="field"><label>Title / Role *</label><input type="text" id="e1ctitle" placeholder="e.g. HR Manager"></div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label>Email Address *</label>
+              <input type="email" id="e1email" placeholder="contact@company.com">
+              <div class="field-error" id="e1emailErr">Please enter a valid email address.</div>
+            </div>
+            <div class="field">
+              <label>Phone Number <span style="color:var(--text-faint);font-weight:400;">(optional)</span></label>
+              <input type="tel" id="e1phone" placeholder="613-555-0100">
+            </div>
+          </div>
+          <div class="form-actions">
+            <div style="font-size:13px;color:var(--text-faint);">Step 1 of 3</div>
+            <button class="btn-form-next" onclick="nextEmpStep(0)">Continue →</button>
+          </div>
+        </div>
+
+        <!-- EMP STEP 2: Placement Details -->
+        <div class="emp-form-step" id="es1">
+          <div class="step-heading">Placement Details</div>
+          <div class="step-sub" style="margin-bottom:22px;">Tell us about the placement you're offering.</div>
+          <div class="field-row">
+            <div class="field">
+              <label>Office Address *</label>
+              <input type="text" id="e2address" placeholder="e.g. 555 Legget Dr, Kanata, ON">
+              <div class="field-hint">Specific address where the student will be working.</div>
+            </div>
+            <div class="field">
+              <label>KNBA Member? *</label>
+              <select id="e2knba" onchange="handleKNBA(this)">
+                <option value="">Select one</option>
+                <option value="yes">Yes</option>
+                <option value="interested">No — but interested in joining</option>
+                <option value="no">No</option>
+              </select>
+              <a class="knba-link" id="knbaJoinLink" href="https://kanatanorthba.com/membership/" target="_blank" style="display:none;">→ Learn about KNBA membership</a>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label>Number of Students Needed *</label>
+              <select id="e2students">
+                <option value="">Select</option>
+                <option>1</option><option>2</option><option>3</option>
+                <option>4</option><option>5</option><option>6</option>
+                <option>7</option><option>8</option><option>9</option><option>10+</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Work Format *</label>
+              <select id="e2format">
+                <option value="">Select format</option>
+                <option>In-person</option><option>Remote</option><option>Hybrid</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label>Preferred Placement Tracks *</label>
+            <div class="track-grid-sel" style="margin-top:10px;">
+              <div class="track-sel-card" onclick="toggleTrackSel(this,'Technology')"><div class="track-sel-icon">💻</div><div class="track-sel-name">Technology</div></div>
+              <div class="track-sel-card" onclick="toggleTrackSel(this,'Marketing')"><div class="track-sel-icon">📣</div><div class="track-sel-name">Marketing</div></div>
+              <div class="track-sel-card" onclick="toggleTrackSel(this,'Business Ops')"><div class="track-sel-icon">📊</div><div class="track-sel-name">Business Ops</div></div>
+              <div class="track-sel-card" onclick="toggleTrackSel(this,'Finance')"><div class="track-sel-icon">💰</div><div class="track-sel-name">Finance</div></div>
+              <div class="track-sel-card" onclick="toggleTrackSel(this,'HR / Admin')"><div class="track-sel-icon">👥</div><div class="track-sel-name">HR / Admin</div></div>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Hours Required Per Week *</label><input type="number" id="e2hours" min="14" max="40" placeholder="e.g. 20"></div>
+            <div class="field"><label>Start Date Flexibility *</label>
+              <select id="e2startflex">
+                <option value="">Select</option>
+                <option>Specific date required</option>
+                <option>Flexible within 2 weeks</option>
+                <option>Flexible within a month</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label>Named Supervisor *</label><input type="text" id="e2supervisor" placeholder="Full name of the direct supervisor"><div class="field-hint">A named individual is required — not a general inbox.</div></div>
+          <div class="field"><label>Placement Description * <span style="color:var(--text-faint);font-weight:400;">(min. 100 words)</span></label><textarea id="e2desc" style="min-height:140px;" placeholder="Describe what the student(s) will actually do during their placement. Be specific."></textarea></div>
+          <div class="form-actions">
+            <button class="btn-form-back" onclick="prevEmpStep(1)">← Back</button>
+            <button class="btn-form-next" onclick="nextEmpStep(1)">Continue →</button>
+          </div>
+        </div>
+
+        <!-- EMP STEP 3: Commitment -->
+        <div class="emp-form-step" id="es2">
+          <div class="step-heading">Employer Commitment</div>
+          <div class="step-sub" style="margin-bottom:22px;">Check all boxes to confirm your commitment to the SiB program.</div>
+          <div class="clauses">
+            <div class="clause" onclick="toggleClause(this)"><div class="clause-box">✓</div><p>I commit to providing a professional, supportive work environment for the placed student(s).</p></div>
+            <div class="clause" onclick="toggleClause(this)"><div class="clause-box">✓</div><p>I agree to complete the mid-placement check-in form provided by the SiB coordinator.</p></div>
+            <div class="clause" onclick="toggleClause(this)"><div class="clause-box">✓</div><p>I agree to participate in end-of-term feedback to improve the program for future cohorts.</p></div>
+          </div>
+          <div class="form-actions">
+            <button class="btn-form-back" onclick="prevEmpStep(2)">← Back</button>
+            <button class="btn-form-submit" onclick="submitEmpReg()">Submit Registration ✓</button>
+          </div>
+        </div>
+
+      </div><!-- /form-card -->
+    </div><!-- /empFormMain -->
+
+    <div class="success-wrap" id="empSuccess">
+      <div class="success-card">
+        <div class="success-icon">🏢</div>
+        <div class="success-title">Registration Received!</div>
+        <div class="success-body">Your submission will be reviewed within 3–5 business days. You'll receive portal access by email once approved.</div>
+        <div class="timeline-pills">
+          <div class="tpill"><strong>Now</strong> Confirmation email sent</div>
+          <div class="tpill"><strong>3–5 days</strong> Vetting completed</div>
+          <div class="tpill"><strong>If approved</strong> Portal access granted</div>
+        </div>
+        <div class="success-actions">
+          <button class="btn-primary" onclick="showPage('employer-dashboard')">Go to Dashboard →</button>
+          <button class="btn-secondary" onclick="showPage('home')">Back to Home</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ STUDENT DASHBOARD -->
+<div id="page-student-dashboard" class="page">
+  <div class="dash-layout">
+    <div class="dash-sidebar">
+      <div class="sidebar-logo">
+        <div class="sidebar-logo-mark">SiB</div>
+        <div class="sidebar-logo-name">Student Portal</div>
+        <div class="sidebar-logo-user" id="sdash-username">Student</div>
+      </div>
+      <div class="sidebar-nav">
+        <button class="sidebar-link active" onclick="showSDashSection('overview')"><span class="sicon">🏠</span>Overview</button>
+        <button class="sidebar-link" onclick="showSDashSection('application')"><span class="sicon">📋</span>My Application</button>
+        <button class="sidebar-link" onclick="showSDashSection('placement')"><span class="sicon">🏢</span>Placement</button>
+        <button class="sidebar-link" onclick="goToResourceFromDash('student')"><span class="sicon">📚</span>Resources</button>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="sidebar-user-name" id="sdash-name">Student</div>
+        <div class="sidebar-user-role">Student Applicant</div>
+        <button class="sidebar-signout" onclick="doSignOut()">🚪 Sign Out</button>
+      </div>
+    </div>
+    <div class="dash-main">
+      <!-- OVERVIEW -->
+      <div id="sdash-overview">
+        <div class="dash-header">
+          <div class="dash-title">Welcome back, <span id="sdash-firstname">there</span> 👋</div>
+          <div class="dash-sub">Here's a snapshot of your SiB application status.</div>
+        </div>
+        <div class="status-hero">
+          <div class="status-hero-inner">
+            <div class="status-eyebrow">Application Status</div>
+            <div class="status-name" id="sdash-fullname">Your Name</div>
+            <div class="status-school" id="sdash-school">Earl of March SS · Grade 12 · Technology / Marketing</div>
+            <div class="status-badge"><div class="status-badge-dot"></div><span id="sdash-status">Under Review</span></div>
+          </div>
+        </div>
+        <div class="tracker-card">
+          <div class="tracker-title">Application Progress</div>
+          <div class="tracker-steps">
+            <div class="tracker-step done"><div class="tracker-circle">✓</div><div class="tracker-step-label">Submitted</div></div>
+            <div class="tracker-step current"><div class="tracker-circle">2</div><div class="tracker-step-label">Under Review</div></div>
+            <div class="tracker-step"><div class="tracker-circle">3</div><div class="tracker-step-label">Approved</div></div>
+            <div class="tracker-step"><div class="tracker-circle">4</div><div class="tracker-step-label">Matched</div></div>
+          </div>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-card"><div class="detail-label">Employer</div><div class="detail-val soft">Not yet matched. Your profile is live — we'll notify you when an employer selects you.</div></div>
+          <div class="detail-card"><div class="detail-label">Next Steps</div><div class="detail-val soft">Coordinator is reviewing your application. Check your email for updates within 3–5 business days.</div></div>
+          <div class="detail-card"><div class="detail-label">Tracks Selected</div><div class="detail-val" id="sdash-tracks">Technology, Marketing</div></div>
+          <div class="detail-card"><div class="detail-label">Availability</div><div class="detail-val" id="sdash-avail">25 hrs/week</div></div>
+        </div>
+      </div>
+      <!-- APPLICATION DETAIL -->
+      <div id="sdash-application" style="display:none;">
+        <div class="dash-header"><div class="dash-title">My Application</div><div class="dash-sub">Review what you submitted.</div></div>
+        <div class="tracker-card">
+          <div class="tracker-title">Submitted Responses</div>
+          <div style="display:flex;flex-direction:column;gap:18px;">
+            <div><div class="detail-label">Why do you want a co-op placement?</div><div style="font-size:13.5px;color:var(--text-body);line-height:1.65;margin-top:5px;padding:13px 15px;background:var(--mist);border-radius:var(--radius-sm);" id="sdash-q1">Sample answer stored from your application.</div></div>
+            <div><div class="detail-label">Describe a project where you worked independently</div><div style="font-size:13.5px;color:var(--text-body);line-height:1.65;margin-top:5px;padding:13px 15px;background:var(--mist);border-radius:var(--radius-sm);" id="sdash-q2">Sample answer stored from your application.</div></div>
+          </div>
+        </div>
+        <div class="detail-grid" style="margin-top:18px;">
+          <div class="detail-card">
+            <div class="detail-label">Resume</div>
+            <div class="detail-val" id="sdash-resumename">No resume uploaded</div>
+            <div style="margin-top:8px;" id="sdash-resumebtn"></div>
+          </div>
+          <div class="detail-card"><div class="detail-label">Commitment Agreement</div><div class="detail-val" style="color:var(--emerald);">✓ All 5 clauses signed</div></div>
+        </div>
+        <div style="background:rgba(180,83,9,0.05);border:1px solid rgba(180,83,9,0.18);border-radius:var(--radius);padding:14px 18px;margin-top:6px;">
+          <div style="font-size:13px;font-weight:700;color:var(--amber);margin-bottom:3px;">Need to make changes?</div>
+          <div style="font-size:13px;color:var(--text-muted);">After submission, edits must be requested via the coordinator. Email <a href="mailto:ysaadaldin08@gmail.com" style="color:var(--blue);font-weight:600;">ysaadaldin08@gmail.com</a> with your change request.</div>
+        </div>
+      </div>
+      <!-- PLACEMENT -->
+      <div id="sdash-placement" style="display:none;">
+        <div class="dash-header"><div class="dash-title">Placement Details</div><div class="dash-sub">Your placement information will appear here once matched.</div></div>
+        <div style="background:white;border-radius:var(--radius-xl);padding:56px 36px;text-align:center;border:1px solid var(--line);box-shadow:var(--shadow-xs);">
+          <div style="font-size:44px;margin-bottom:14px;">⏳</div>
+          <div style="font-family:var(--serif);font-size:21px;font-weight:400;color:var(--ink);margin-bottom:7px;">Not yet matched</div>
+          <div style="font-size:13.5px;color:var(--text-muted);max-width:360px;margin:0 auto;">Your profile is live in the employer browse portal. When an employer selects you, the coordinator will reach out to schedule an intro meeting.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ EMPLOYER DASHBOARD -->
+<div id="page-employer-dashboard" class="page">
+  <div class="dash-layout">
+    <div class="dash-sidebar">
+      <div class="sidebar-logo">
+        <div class="sidebar-logo-mark">SiB</div>
+        <div class="sidebar-logo-name">Employer Portal</div>
+        <div class="sidebar-logo-user" id="edash-company">Company</div>
+      </div>
+      <div class="sidebar-nav">
+        <button class="sidebar-link active" onclick="showEDashSection('overview')"><span class="sicon">🏠</span>Overview</button>
+        <button class="sidebar-link" onclick="showEDashSection('browse')"><span class="sicon">👤</span>Browse Students</button>
+        <button class="sidebar-link" onclick="showEDashSection('requests')"><span class="sicon">📨</span>My Requests</button>
+        <button class="sidebar-link" onclick="showEDashSection('listing')"><span class="sicon">📋</span>My Listing</button>
+        <button class="sidebar-link" onclick="goToResourceFromDash('employer')"><span class="sicon">📚</span>Resources</button>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="sidebar-user-name" id="edash-contact">Contact</div>
+        <div class="sidebar-user-role">Employer · Approved</div>
+        <button class="sidebar-signout" onclick="doSignOut()">🚪 Sign Out</button>
+      </div>
+    </div>
+    <div class="dash-main">
+      <!-- OVERVIEW -->
+      <div id="edash-overview">
+        <div class="dash-header"><div class="dash-title">Employer Overview</div><div class="dash-sub" id="edash-cohortline">Spring 2026 cohort</div></div>
+        <div class="stat-row">
+          <div class="stat-card"><div class="stat-label">Students Available</div><div class="stat-val">6</div><div class="stat-change">↑ New profiles this week</div></div>
+          <div class="stat-card"><div class="stat-label">Intro Requests Sent</div><div class="stat-val">2</div><div class="stat-change">Pending coordinator review</div></div>
+          <div class="stat-card"><div class="stat-label">Placements Confirmed</div><div class="stat-val">0</div></div>
+          <div class="stat-card"><div class="stat-label">Spots Needed</div><div class="stat-val">2</div><div class="stat-change">From your registration</div></div>
+        </div>
+        <div class="gate-banner">
+          <p>🔒 <strong>Privacy reminder:</strong> Full student names and contact info are only shared after an intro meeting is confirmed by the coordinator.</p>
+          <button class="btn-outline-sm" onclick="showEDashSection('browse')">Browse Students →</button>
+        </div>
+        <div class="app-table">
+          <div class="app-table-header"><div>Student</div><div class="hide-mob">Track</div><div class="hide-mob">Availability</div><div>Status</div><div>Action</div></div>
+          <div class="app-row" onclick="openSProfile(1)"><div><div class="app-name">Alex T.</div><div class="app-school">Earl of March SS · Gr.12</div></div><div class="app-cell hide-mob">Technology</div><div class="app-cell hide-mob">25 hrs/wk</div><div><span class="status-pill sp-approved">Verified</span></div><div><button class="btn-intro" onclick="event.stopPropagation();openIntroModal(1)">Request Intro</button></div></div>
+          <div class="app-row" onclick="openSProfile(5)"><div><div class="app-name">Jordan C.</div><div class="app-school">Bell HS · Gr.11</div></div><div class="app-cell hide-mob">Technology</div><div class="app-cell hide-mob">20 hrs/wk</div><div><span class="status-pill sp-approved">Verified</span></div><div><button class="btn-intro" onclick="event.stopPropagation();openIntroModal(5)">Request Intro</button></div></div>
+          <div class="app-row" onclick="openSProfile(2)"><div><div class="app-name">Maya S.</div><div class="app-school">A.Y. Jackson SS · Gr.11</div></div><div class="app-cell hide-mob">Marketing</div><div class="app-cell hide-mob">20 hrs/wk</div><div><span class="status-pill sp-review">Pending</span></div><div><button class="btn-intro" onclick="event.stopPropagation();openIntroModal(2)">Request Intro</button></div></div>
+        </div>
+      </div>
+      <!-- BROWSE -->
+      <div id="edash-browse" style="display:none;">
+        <div class="dash-header"><div class="dash-title">Browse Student Profiles</div><div class="dash-sub">Showing approved students matched to your preferred tracks</div></div>
+        <div class="filter-bar">
+          <input class="filter-input" placeholder="Search by name, skill, or school..." oninput="filterStudents(this.value)">
+          <select class="filter-select" onchange="filterStudents()"><option value="">All Tracks</option><option>Technology</option><option>Marketing</option><option>Business Ops</option><option>Finance</option><option>HR / Admin</option></select>
+          <select class="filter-select"><option value="">All Availability</option><option>14+ hrs/week</option><option>20+ hrs/week</option></select>
+        </div>
+        <div class="students-grid" id="studentGrid"></div>
+      </div>
+      <!-- REQUESTS -->
+      <div id="edash-requests" style="display:none;">
+        <div class="dash-header"><div class="dash-title">My Intro Requests</div><div class="dash-sub">Track the status of your introduction requests.</div></div>
+        <div class="app-table">
+          <div class="app-table-header"><div>Student</div><div class="hide-mob">Track</div><div class="hide-mob">Requested</div><div>Status</div><div>Action</div></div>
+          <div class="app-row"><div><div class="app-name">Alex T.</div><div class="app-school">Earl of March SS · Gr.12</div></div><div class="app-cell hide-mob">Technology</div><div class="app-cell hide-mob">Mar 28, 2026</div><div><span class="status-pill sp-review">Pending</span></div><div style="font-size:12px;color:var(--text-faint);">Coordinator reviewing</div></div>
+          <div class="app-row"><div><div class="app-name">Jordan C.</div><div class="app-school">Bell HS · Gr.11</div></div><div class="app-cell hide-mob">Technology</div><div class="app-cell hide-mob">Mar 29, 2026</div><div><span class="status-pill sp-review">Pending</span></div><div style="font-size:12px;color:var(--text-faint);">Coordinator reviewing</div></div>
+        </div>
+      </div>
+      <!-- LISTING -->
+      <div id="edash-listing" style="display:none;">
+        <div class="dash-header"><div class="dash-title">My Company Listing</div><div class="dash-sub">Your registered placement details. Contact the coordinator to make changes.</div></div>
+        <div class="tracker-card">
+          <div class="detail-grid" style="margin-bottom:0;" id="edash-listing-grid">
+            <div class="detail-card"><div class="detail-label">Company</div><div class="detail-val" id="el-company">—</div></div>
+            <div class="detail-card"><div class="detail-label">Industry</div><div class="detail-val" id="el-industry">—</div></div>
+            <div class="detail-card"><div class="detail-label">Work Format</div><div class="detail-val" id="el-format">—</div></div>
+            <div class="detail-card"><div class="detail-label">Hours / Week</div><div class="detail-val" id="el-hours">—</div></div>
+            <div class="detail-card"><div class="detail-label">Students Needed</div><div class="detail-val" id="el-students">—</div></div>
+            <div class="detail-card"><div class="detail-label">Named Supervisor</div><div class="detail-val" id="el-supervisor">—</div></div>
+          </div>
+        </div>
+        <div style="background:rgba(180,83,9,0.05);border:1px solid rgba(180,83,9,0.18);border-radius:var(--radius);padding:14px 18px;margin-top:14px;">
+          <div style="font-size:13px;font-weight:700;color:var(--amber);margin-bottom:3px;">Need to update your listing?</div>
+          <div style="font-size:13px;color:var(--text-muted);">Email <a href="mailto:ysaadaldin08@gmail.com" style="color:var(--blue);font-weight:600;">ysaadaldin08@gmail.com</a> with your requested changes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ RESOURCES PAGE -->
+<div id="page-resources" class="page">
+  <div class="resources-hero">
+    <div class="resources-inner" style="position:relative;z-index:1;">
+      <div id="resourcesReturnBtn" style="margin-bottom:20px;"></div>
+      <div style="font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.38);margin-bottom:12px;">Resource Centre</div>
+      <h1 style="font-family:var(--serif);font-size:46px;font-weight:400;color:white;letter-spacing:-0.02em;margin-bottom:14px;">Prepare for your placement</h1>
+      <p style="font-size:16.5px;color:rgba(255,255,255,0.55);line-height:1.65;max-width:520px;">Guides, tools, and official sources to help you put your best foot forward — all linked to credible, up-to-date resources.</p>
+    </div>
+  </div>
+  <div class="section" style="background:var(--mist);padding-top:56px;">
+    <div class="section-inner" style="max-width:880px;">
+      <div class="resource-cards">
+        <div class="rc reveal">
+          <div class="rc-header"><div class="rc-icon">📄</div><div class="rc-title">Resume Builder</div><div class="rc-desc">Templates, tips, and step-by-step guides to write a resume that employers notice.</div></div>
+          <div class="rc-body">
+            <a class="rc-link" href="https://www.jobbank.gc.ca/findajob/resources/write-good-resume" target="_blank"><span class="rc-link-icon">🇨🇦</span><div><div class="rc-link-text">How to Write a Good Resume</div><div class="rc-link-source">Government of Canada · Job Bank</div></div><span class="rc-link-arrow">→</span></a>
+            <a class="rc-link" href="https://www.canada.ca/en/employment-social-development/programs/youth/resources/resume.html" target="_blank"><span class="rc-link-icon">🇨🇦</span><div><div class="rc-link-text">Youth Resume Writing Guide</div><div class="rc-link-source">Employment and Social Development Canada</div></div><span class="rc-link-arrow">→</span></a>
+            <a class="rc-link" href="https://www.ocdsb.ca/students/career" target="_blank"><span class="rc-link-icon">🏫</span><div><div class="rc-link-text">Career & Co-op Resources</div><div class="rc-link-source">Ottawa-Carleton District School Board</div></div><span class="rc-link-arrow">→</span></a>
+          </div>
+        </div>
+        <div class="rc reveal reveal-delay-1">
+          <div class="rc-header"><div class="rc-icon">🎤</div><div class="rc-title">Interview Techniques</div><div class="rc-desc">Common questions, preparation strategies, and best practices for making a great impression.</div></div>
+          <div class="rc-body">
+            <a class="rc-link" href="https://www.jobbank.gc.ca/findajob/resources/prepare-for-interview" target="_blank"><span class="rc-link-icon">🇨🇦</span><div><div class="rc-link-text">How to Prepare for a Job Interview</div><div class="rc-link-source">Government of Canada · Job Bank</div></div><span class="rc-link-arrow">→</span></a>
+            <a class="rc-link" href="https://www.canada.ca/en/employment-social-development/programs/youth/resources/interview.html" target="_blank"><span class="rc-link-icon">🇨🇦</span><div><div class="rc-link-text">Youth Interview Preparation Guide</div><div class="rc-link-source">Employment and Social Development Canada</div></div><span class="rc-link-arrow">→</span></a>
+            <a class="rc-link" href="https://www.jobbank.gc.ca/findajob/resources/job-interview-tips" target="_blank"><span class="rc-link-icon">💡</span><div><div class="rc-link-text">Job Interview Tips</div><div class="rc-link-source">Government of Canada · Job Bank</div></div><span class="rc-link-arrow">→</span></a>
+          </div>
+        </div>
+        <div class="rc reveal reveal-delay-2">
+          <div class="rc-header"><div class="rc-icon">💼</div><div class="rc-title">Workplace Professionalism</div><div class="rc-desc">Your rights, responsibilities, and what employers expect from day one.</div></div>
+          <div class="rc-body">
+            <a class="rc-link" href="https://www.canada.ca/en/employment-social-development/services/labour-standards/young-workers.html" target="_blank"><span class="rc-link-icon">🇨🇦</span><div><div class="rc-link-text">Young Workers — Rights & Responsibilities</div><div class="rc-link-source">Employment and Social Development Canada</div></div><span class="rc-link-arrow">→</span></a>
+            <a class="rc-link" href="https://www.ontario.ca/page/young-worker" target="_blank"><span class="rc-link-icon">🏛️</span><div><div class="rc-link-text">Ontario Young Worker Safety Guide</div><div class="rc-link-source">Government of Ontario</div></div><span class="rc-link-arrow">→</span></a>
+          </div>
+        </div>
+        <div class="rc reveal reveal-delay-3">
+          <div class="rc-header"><div class="rc-icon">🧭</div><div class="rc-title">Co-op Planning</div><div class="rc-desc">Tools and guides to set goals, track your learning, and make the most of your placement.</div></div>
+          <div class="rc-body">
+            <a class="rc-link" href="https://www.ocdsb.ca/students/cooperative-education" target="_blank"><span class="rc-link-icon">🏫</span><div><div class="rc-link-text">OCDSB Cooperative Education</div><div class="rc-link-source">Ottawa-Carleton District School Board</div></div><span class="rc-link-arrow">→</span></a>
+            <a class="rc-link" href="https://www.jobbank.gc.ca/career-planning" target="_blank"><span class="rc-link-icon">🇨🇦</span><div><div class="rc-link-text">Career Planning Tools</div><div class="rc-link-source">Government of Canada · Job Bank</div></div><span class="rc-link-arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <div><div class="footer-brand">Students in Business</div><div class="footer-tagline">Co-op Placement Initiative · Kanata North</div></div>
+      <div style="text-align:right;"><div class="footer-email">Contact: <a href="mailto:ysaadaldin08@gmail.com">ysaadaldin08@gmail.com</a></div><div class="footer-note">Built &amp; managed by Yousef Saadaldin · Spring 2026</div></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════ HOW IT WORKS (standalone) -->
+<div id="page-about" class="page">
+  <div class="about-hero">
+    <div style="max-width:1180px;margin:0 auto;position:relative;z-index:1;">
+      <div style="font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.38);margin-bottom:12px;">How It Works</div>
+      <h1 style="font-family:var(--serif);font-size:52px;font-weight:400;color:white;letter-spacing:-0.02em;margin-bottom:14px;">Everything you need to know</h1>
+      <p style="font-size:16.5px;color:rgba(255,255,255,0.52);line-height:1.65;max-width:500px;">The SiB process is designed to be simple, transparent, and fair for both students and employers.</p>
+    </div>
+  </div>
+  <section class="section" style="background:var(--mist);">
+    <div class="section-inner">
+      <div class="how-grid">
+        <div class="how-steps">
+          <div class="how-step active"><div class="how-step-num">1</div><div><h4>Student applies online</h4><p>Complete personal info, track selection, screening questions, resume upload, and commitment agreement in 5 simple steps.</p></div></div>
+          <div class="how-step"><div class="how-step-num">2</div><div><h4>Application reviewed</h4><p>The coordinator reviews each application within 3–5 business days. Human judgment — not automated scoring.</p></div></div>
+          <div class="how-step"><div class="how-step-num">3</div><div><h4>Profile goes live</h4><p>Approved students appear in the employer browse portal. Name initial shown — full details only after intro confirmation.</p></div></div>
+          <div class="how-step"><div class="how-step-num">4</div><div><h4>Employer requests an intro</h4><p>Company requests an introduction. Coordinator schedules a brief meeting between both parties.</p></div></div>
+          <div class="how-step"><div class="how-step-num">5</div><div><h4>Placement confirmed</h4><p>Both sides agree. Coordinator updates the match — your dashboard shows placement details.</p></div></div>
+        </div>
+        <div class="how-visual">
+          <div style="font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.38);margin-bottom:14px;position:relative;z-index:1;">Placement Tracks</div>
+          <div class="tracks-list">
+            <div class="track-item"><span class="track-emoji">💻</span><div><div class="track-name">Technology</div><div class="track-desc">Dev, IT, product, data</div></div></div>
+            <div class="track-item"><span class="track-emoji">📣</span><div><div class="track-name">Marketing</div><div class="track-desc">Social, content, events</div></div></div>
+            <div class="track-item"><span class="track-emoji">📊</span><div><div class="track-name">Business Operations</div><div class="track-desc">Strategy, admin, ops</div></div></div>
+            <div class="track-item"><span class="track-emoji">💰</span><div><div class="track-name">Finance</div><div class="track-desc">Accounting, analysis</div></div></div>
+            <div class="track-item"><span class="track-emoji">👥</span><div><div class="track-name">HR / Admin</div><div class="track-desc">People ops, coordination</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="background:white;">
+    <div class="section-inner" style="max-width:760px;">
+      <div class="section-eyebrow">FAQ</div>
+      <h2 class="section-title" style="font-size:32px;">Common questions</h2>
+      <div class="faq-list">
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is there a cost? <span class="faq-chev">▼</span></div><div class="faq-a">No. This is a zero-cost program for everyone — students, employers, and schools. There are no fees of any kind.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Who can see a student's full details? <span class="faq-chev">▼</span></div><div class="faq-a">Only the coordinator has full details at all times. Employers see first name + last initial, school, grade, skills, and availability. Full name and contact info are only shared after both parties confirm an intro meeting.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How are students screened? <span class="faq-chev">▼</span></div><div class="faq-a">All students complete a 5-step application including a screening questionnaire, resume upload, and commitment agreement. The coordinator reviews each application manually before approving any profile.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do employers need to be a KNBA member? <span class="faq-chev">▼</span></div><div class="faq-a">No, but KNBA members receive expedited vetting. Non-members are welcome — the coordinator will verify your company is real, Kanata North-adjacent, and has a named supervisor.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do I contact the coordinator? <span class="faq-chev">▼</span></div><div class="faq-a">Email <a href="mailto:ysaadaldin08@gmail.com" style="color:var(--blue);">ysaadaldin08@gmail.com</a>. Expected response time is 1–2 business days. All student-employer communication is routed through this address.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can a student edit their application after submitting? <span class="faq-chev">▼</span></div><div class="faq-a">Not directly. After submission, changes must be requested by emailing the coordinator. This protects the integrity of the review process.</div></div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-inner">
+      <div><div class="footer-brand">Students in Business</div><div class="footer-tagline">Co-op Placement Initiative · Kanata North</div></div>
+      <div style="text-align:right;"><div class="footer-email">Contact: <a href="mailto:ysaadaldin08@gmail.com">ysaadaldin08@gmail.com</a></div><div class="footer-note">Built &amp; managed by Yousef Saadaldin · Spring 2026</div></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════ PROFILE MODAL -->
+<div class="modal-overlay" id="profileModal">
+  <div class="modal pmodal">
+    <button class="modal-close" onclick="closeModal('profileModal')">×</button>
+    <div id="profileModalContent"></div>
+  </div>
+</div>
+
+<!-- ══════════════════ INTRO MODAL -->
+<div class="modal-overlay" id="introModal">
+  <div class="modal" style="max-width:480px;">
+    <button class="modal-close" onclick="closeModal('introModal')">×</button>
+    <div class="modal-title">Request an Introduction</div>
+    <div class="modal-sub" id="introModalSub">Send a request to the coordinator for this student.</div>
+    <div class="intro-note">Your request will be emailed to the SiB coordinator. They will contact both you and the student within 1–2 business days to schedule an intro meeting. You will not contact the student directly.</div>
+    <div class="field"><label>Additional context for the coordinator (optional)</label><textarea placeholder="Why this student interests you, any scheduling constraints, etc."></textarea></div>
+    <div style="display:flex;gap:9px;margin-top:7px;">
+      <button class="btn-modal-outline" onclick="closeModal('introModal')">Cancel</button>
+      <button class="btn-modal-fill" onclick="submitIntro()">Send Request →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ──────────────────────────────
+// STATE
+// ──────────────────────────────
+let currentUser = null;
+let authTargetPage = null;
+let selectedRole = 'student';
+let resourceReturnPage = null; // which dash page to return from resources
+let appSavedStep = null; // for returning from resource centre to application
+let uploadedResume = null; // store resume file reference
+let empData = {}; // employer form data across steps
+
+// ──────────────────────────────
+// STUDENT DATA
+// ──────────────────────────────
+const students = [
+  { id:1, name:"Alex T.", school:"Earl of March SS", grade:12, tracks:["Technology","Business Ops"], skills:["Python","Excel","Project coordination"], availability:"25 hrs/week", status:"verified", bio:"Grade 12 student passionate about technology and data. Built a personal budgeting app and looking for a placement where I can contribute to real product work.", commute:"Independent", startDate:"May 2026", references:"Academic + Personal" },
+  { id:2, name:"Maya S.", school:"A.Y. Jackson SS", grade:11, tracks:["Marketing"], skills:["Canva","Instagram","Content writing","SEO basics"], availability:"20 hrs/week", status:"verified", bio:"Creative Grade 11 student. Managed school social accounts and grew following by 40% over one semester. Eager to learn digital marketing strategy.", commute:"Transit", startDate:"May 2026", references:"Academic" },
+  { id:3, name:"Ethan R.", school:"Merivale HS", grade:12, tracks:["Finance","Business Ops"], skills:["Accounting basics","Excel","Financial modelling"], availability:"30 hrs/week", status:"verified", bio:"Finance-focused Grade 12 student. Part of the school investment club.", commute:"Independent", startDate:"April 2026", references:"Academic + Professional" },
+  { id:4, name:"Priya K.", school:"Earl of March SS", grade:10, tracks:["HR / Admin"], skills:["Google Workspace","Communication","Event planning"], availability:"14 hrs/week", status:"pending", bio:"Organized Grade 10 student. Volunteered as class representative and organized multiple school events.", commute:"Transit", startDate:"June 2026", references:"Academic" },
+  { id:5, name:"Jordan C.", school:"Bell HS", grade:11, tracks:["Technology","Marketing"], skills:["HTML/CSS basics","Figma","Content creation"], availability:"20 hrs/week", status:"verified", bio:"Interested in tech-adjacent creative roles — UX, digital marketing, or content. Built a portfolio website independently.", commute:"Independent", startDate:"May 2026", references:"Personal + Academic" },
+  { id:6, name:"Fatima A.", school:"Colonel By SS", grade:12, tracks:["Business Ops","Finance"], skills:["Data analysis","PowerPoint","Research","Report writing"], availability:"25 hrs/week", status:"verified", bio:"Analytical Grade 12 student. Took AP Economics and participated in a regional business competition.", commute:"Independent", startDate:"April 2026", references:"Academic + Professional" }
+];
+const tagClass = {"Technology":"tt-tech","Marketing":"tt-mkt","Business Ops":"tt-biz","Finance":"tt-fin","HR / Admin":"tt-hr"};
+
+// ──────────────────────────────
+// PAGE NAV
+// ──────────────────────────────
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const pg = document.getElementById('page-' + name);
+  if (pg) { pg.classList.add('active'); window.scrollTo(0,0); initReveal(); }
+  if (name === 'employer-dashboard') renderStudents(students);
+  // Update nav Apply btn visibility
+  updateNavApplyBtn();
+}
+
+function handleApplyNav() {
+  if (!currentUser) { authTargetPage = null; openModal('authModal'); return; }
+  if (currentUser.role === 'employer') showPage('employer-register');
+  else showPage('student-apply');
+}
+
+function requireAuth(page) {
+  if (currentUser) {
+    // Role-based routing
+    if (page === 'student-apply' && currentUser.role === 'employer') { showPage('employer-register'); return; }
+    if (page === 'employer-register' && currentUser.role === 'student') { showPage('student-apply'); return; }
+    showPage(page); return;
+  }
+  authTargetPage = page;
+  openModal('authModal');
+}
+
+function updateNavApplyBtn() {
+  // Nothing special needed — Apply navigates based on role
+}
+
+// ──────────────────────────────
+// SCROLL REVEAL
+// ──────────────────────────────
+function initReveal() {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => {
+    el.classList.remove('visible'); obs.observe(el);
+  });
+}
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 10);
+});
+
+// ──────────────────────────────
+// AUTH
+// ──────────────────────────────
+// Fake account store for demo
+const fakeAccounts = {};
+
+function openAuth(tab) { switchAuthTab(tab); openModal('authModal'); }
+
+function switchAuthTab(tab) {
+  document.getElementById('authLogin').style.display = tab === 'login' ? 'block' : 'none';
+  document.getElementById('authSignup').style.display = tab === 'signup' ? 'block' : 'none';
+  document.getElementById('authTabLogin').classList.toggle('active', tab === 'login');
+  document.getElementById('authTabSignup').classList.toggle('active', tab === 'signup');
+  document.getElementById('noAccountNote').classList.remove('show');
+}
+
+function selectRole(r) {
+  selectedRole = r;
+  document.getElementById('roleStudent').classList.toggle('selected', r === 'student');
+  document.getElementById('roleEmployer').classList.toggle('selected', r === 'employer');
+}
+
+function isValidEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+function isValidPhone(p) { if (!p) return true; return /^[\d\s\-\+\(\)\.]{7,15}$/.test(p); }
+
+function handleGoogleAuth() {
+  // Simulate Google sign-in — ask for role if new user
+  showToast('Google sign-in is not yet connected. Please use email sign-up for now.');
+}
+
+function doLogin() {
+  const email = document.getElementById('loginEmail').value.trim();
+  const pass = document.getElementById('loginPassword').value;
+  if (!email || !pass) { showToast('Please enter your email and password.', true); return; }
+  if (!isValidEmail(email)) { showToast('Please enter a valid email address.', true); return; }
+  // Check fake accounts
+  const acct = fakeAccounts[email.toLowerCase()];
+  if (!acct) {
+    document.getElementById('noAccountNote').classList.add('show');
+    return;
+  }
+  if (acct.pass !== pass) { showToast('Incorrect password. Please try again.', true); return; }
+  document.getElementById('noAccountNote').classList.remove('show');
+  currentUser = { name: acct.name, role: acct.role, email, first: acct.first };
+  closeModal('authModal');
+  updateNavForAuth();
+  showToast('✓ Welcome back, ' + acct.first + '!');
+  afterAuth();
+}
+
+function doSignup() {
+  const first = document.getElementById('signupFirst').value.trim();
+  const last = document.getElementById('signupLast').value.trim();
+  const email = document.getElementById('signupEmail').value.trim();
+  const pass = document.getElementById('signupPass').value;
+  if (!first || !last || !email || !pass) { showToast('Please fill in all fields.', true); return; }
+  if (!isValidEmail(email)) { showToast('Please enter a valid email address.', true); return; }
+  if (pass.length < 8) { showToast('Password must be at least 8 characters.', true); return; }
+  // Store account
+  fakeAccounts[email.toLowerCase()] = { name: first + ' ' + last.charAt(0) + '.', first, last, role: selectedRole, pass };
+  currentUser = { name: first + ' ' + last.charAt(0) + '.', role: selectedRole, email, first };
+  closeModal('authModal');
+  updateNavForAuth();
+  showToast('✓ Account created! Welcome, ' + first + '.');
+  afterAuth();
+}
+
+function afterAuth() {
+  if (authTargetPage) {
+    const pg = authTargetPage; authTargetPage = null;
+    // Role-based routing
+    if (pg === 'student-apply' && currentUser.role === 'employer') showPage('employer-register');
+    else if (pg === 'employer-register' && currentUser.role === 'student') showPage('student-apply');
+    else showPage(pg);
+  } else {
+    showPage(currentUser.role === 'employer' ? 'employer-dashboard' : 'home');
+  }
+}
+
+function doSignOut() {
+  currentUser = null;
+  updateNavForAuth();
+  showPage('home');
+  showToast('You have been signed out.');
+}
+
+function updateNavForAuth() {
+  const actions = document.getElementById('navActions');
+  if (currentUser) {
+    const dashPage = currentUser.role === 'employer' ? 'employer-dashboard' : 'student-dashboard';
+    actions.innerHTML = `<span style="font-size:13.5px;font-weight:600;color:var(--ink);padding:7px 12px;">${currentUser.name}</span><button class="btn-fill-sm" onclick="showPage('${dashPage}')">Dashboard</button>`;
+  } else {
+    actions.innerHTML = `<button class="btn-outline-sm" onclick="openAuth('login')">Sign In</button><button class="btn-fill-sm" onclick="openAuth('signup')">Get Started</button>`;
+  }
+}
+
+// ──────────────────────────────
+// HERO TABS
+// ──────────────────────────────
+function switchHeroTab(btn, type) {
+  document.querySelectorAll('.hero-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('hstudents').style.display = type === 'students' ? 'flex' : 'none';
+  document.getElementById('hemployers').style.display = type === 'employers' ? 'flex' : 'none';
+}
+
+// ──────────────────────────────
+// STUDENT FORM
+// ──────────────────────────────
+let currentSStep = 0;
+const totalSSteps = 5;
+const studentSelectedTracks = new Set();
+
+function updateSDots(step) {
+  for (let i = 0; i < totalSSteps; i++) {
+    const d = document.getElementById('sd' + i);
+    if (d) d.className = 'sdot' + (i < step ? ' done' : i === step ? ' current' : '');
+  }
+}
+
+function nextSStep(from) {
+  if (from === 0) {
+    const f = document.getElementById('s1first').value.trim();
+    const l = document.getElementById('s1last').value.trim();
+    const e = document.getElementById('s1email').value.trim();
+    const p = document.getElementById('s1phone').value.trim();
+    const sc = document.getElementById('s1school').value.trim();
+    const g = document.getElementById('s1grade').value;
+    const sn = document.getElementById('s1studentnum').value.trim();
+    // Validate required
+    if (!f||!l||!e||!sc||!g||!sn) { showToast('Please fill in all required fields.', true); return; }
+    // Email validation
+    const emailErr = document.getElementById('s1emailErr');
+    if (!isValidEmail(e)) { emailErr.classList.add('show'); return; } else { emailErr.classList.remove('show'); }
+    // Phone validation (optional)
+    const phoneErr = document.getElementById('s1phoneErr');
+    if (p && !isValidPhone(p)) { phoneErr.classList.add('show'); return; } else { phoneErr.classList.remove('show'); }
+  }
+  if (from === 1) {
+    if (studentSelectedTracks.size === 0) { showToast('Please select at least one track.', true); return; }
+  }
+  if (from === 2) {
+    const hrs = parseInt(document.getElementById('s3hours').value);
+    if (!hrs || hrs < 14) { showToast('You must be available at least 14 hours per week to apply.', true); return; }
+    // Enforce min = 14
+    if (hrs < 14) { document.getElementById('s3hours').value = 14; return; }
+    const dt = document.getElementById('s3date').value;
+    if (!dt) { showToast('Please select a preferred start date.', true); return; }
+    // Date must not be before today
+    const today = new Date(); today.setHours(0,0,0,0);
+    const chosen = new Date(dt + 'T00:00:00');
+    if (chosen < today) { showToast('Preferred start date cannot be before today.', true); return; }
+    const commute = document.getElementById('s3commute').value;
+    if (!commute) { showToast('Please indicate commute option.', true); return; }
+    const auth = document.getElementById('s3auth').value;
+    if (!auth) { showToast('Please indicate parent/guardian authorization.', true); return; }
+    if (auth === 'no') { showToast('Parent/guardian authorization is required to proceed. Please obtain approval before submitting.', true); return; }
+  }
+  if (from === 3) {
+    const q1 = document.getElementById('s4q1').value.trim();
+    const q2 = document.getElementById('s4q2').value.trim();
+    const q3 = document.getElementById('s4q3').value.trim();
+    if (!q1||!q2||!q3) { showToast('Please answer all screening questions.', true); return; }
+    if (containsProfanity(q1+q2+q3)) { showToast('⚠️ Please keep your responses professional and appropriate.', true); return; }
+  }
+  document.getElementById('ss' + from).classList.remove('active');
+  const next = from + 1;
+  if (next < totalSSteps) {
+    document.getElementById('ss' + next).classList.add('active');
+    updateSDots(next);
+    currentSStep = next;
+  }
+  window.scrollTo(0,180);
+}
+
+function prevSStep(from) {
+  document.getElementById('ss' + from).classList.remove('active');
+  const prev = from - 1;
+  if (prev >= 0) {
+    document.getElementById('ss' + prev).classList.add('active');
+    updateSDots(prev);
+  }
+  window.scrollTo(0,180);
+}
+
+function submitStudentApp() {
+  const allChecked = [...document.querySelectorAll('#ss4 .clause')].every(c => c.classList.contains('checked'));
+  if (!allChecked) { showToast('Please check all commitment clauses before submitting.', true); return; }
+  // Warn if no resume but allow continue
+  if (!uploadedResume) {
+    if (!confirm('You have not uploaded a resume. Are you sure you want to submit without one?')) return;
+  }
+  document.getElementById('studentFormMain').style.display = 'none';
+  document.getElementById('studentSuccess').classList.add('show');
+  // Update dashboard with entered data
+  populateStudentDash();
+  window.scrollTo(0,0);
+}
+
+function populateStudentDash() {
+  if (!currentUser) return;
+  const first = document.getElementById('s1first')?.value || currentUser.first || 'Student';
+  const last = document.getElementById('s1last')?.value || '';
+  const school = document.getElementById('s1school')?.value || '—';
+  const grade = document.getElementById('s1grade')?.value || '—';
+  const hrs = document.getElementById('s3hours')?.value || '—';
+  const tracks = [...studentSelectedTracks].join(', ') || '—';
+  const q1 = document.getElementById('s4q1')?.value || '—';
+  const q2 = document.getElementById('s4q2')?.value || '—';
+  const resumeName = uploadedResume ? uploadedResume.name : null;
+
+  document.getElementById('sdash-firstname').textContent = first;
+  document.getElementById('sdash-fullname').textContent = first + ' ' + last.charAt(0) + '.';
+  document.getElementById('sdash-school').textContent = school + ' · ' + grade + ' · ' + tracks;
+  document.getElementById('sdash-tracks').textContent = tracks;
+  document.getElementById('sdash-avail').textContent = hrs + ' hrs/week';
+  document.getElementById('sdash-username').textContent = first + ' ' + last.charAt(0) + '.';
+  document.getElementById('sdash-name').textContent = first + ' ' + last.charAt(0) + '.';
+  document.getElementById('sdash-q1').textContent = q1;
+  document.getElementById('sdash-q2').textContent = q2;
+  if (resumeName) {
+    document.getElementById('sdash-resumename').textContent = resumeName;
+    document.getElementById('sdash-resumebtn').innerHTML = `<button class="btn-modal-outline" style="font-size:12px;padding:6px 11px;" onclick="viewResume()">📄 View Resume</button>`;
+  } else {
+    document.getElementById('sdash-resumename').textContent = 'No resume uploaded';
+    document.getElementById('sdash-resumebtn').innerHTML = '';
+  }
+}
+
+function viewResume() {
+  if (uploadedResume) {
+    const url = URL.createObjectURL(uploadedResume);
+    window.open(url, '_blank');
+  } else {
+    showToast('No resume on file.', true);
+  }
+}
+
+// ──────────────────────────────
+// RESOURCE CENTRE NAVIGATION
+// ──────────────────────────────
+function goToResourceFromForm() {
+  appSavedStep = currentSStep;
+  document.getElementById('returnToAppLink').style.display = 'inline-flex';
+  const btn = document.getElementById('resourcesReturnBtn');
+  btn.innerHTML = `<button class="form-back" style="color:rgba(255,255,255,0.6);" onclick="returnToApplication()">← Return to Application</button>`;
+  showPage('resources');
+}
+
+function returnToApplication() {
+  showPage('student-apply');
+  // Restore step
+  document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+  const step = appSavedStep || 4;
+  document.getElementById('ss' + step).classList.add('active');
+  updateSDots(step);
+  currentSStep = step;
+  window.scrollTo(0,180);
+}
+
+function goToResourceFromDash(role) {
+  resourceReturnPage = role === 'employer' ? 'employer-dashboard' : 'student-dashboard';
+  const btn = document.getElementById('resourcesReturnBtn');
+  const label = role === 'employer' ? 'Employer Dashboard' : 'Student Dashboard';
+  btn.innerHTML = `<button class="form-back" style="color:rgba(255,255,255,0.6);" onclick="returnToDash()">← Return to ${label}</button>`;
+  showPage('resources');
+}
+
+function returnToDash() {
+  if (resourceReturnPage) showPage(resourceReturnPage);
+  else showPage('home');
+}
+
+// ──────────────────────────────
+// EMPLOYER FORM
+// ──────────────────────────────
+let currentEmpStep = 0;
+
+function nextEmpStep(from) {
+  if (from === 0) {
+    const company = document.getElementById('e1company').value.trim();
+    const industry = document.getElementById('e1industry').value;
+    const website = document.getElementById('e1website').value.trim();
+    const cname = document.getElementById('e1cname').value.trim();
+    const ctitle = document.getElementById('e1ctitle').value.trim();
+    const email = document.getElementById('e1email').value.trim();
+    if (!company||!industry||!website||!cname||!ctitle||!email) { showToast('Please fill in all required fields.', true); return; }
+    const emailErr = document.getElementById('e1emailErr');
+    if (!isValidEmail(email)) { emailErr.classList.add('show'); return; } else { emailErr.classList.remove('show'); }
+    // Save for listing
+    empData.company = company; empData.industry = industry;
+  }
+  if (from === 1) {
+    const address = document.getElementById('e2address').value.trim();
+    const knba = document.getElementById('e2knba').value;
+    const students = document.getElementById('e2students').value;
+    const format = document.getElementById('e2format').value;
+    const hours = document.getElementById('e2hours').value;
+    const startflex = document.getElementById('e2startflex').value;
+    const supervisor = document.getElementById('e2supervisor').value.trim();
+    const desc = document.getElementById('e2desc').value.trim();
+    if (!address||!knba||!students||!format||!hours||!startflex||!supervisor||!desc) { showToast('Please fill in all required fields.', true); return; }
+    const wordCount = desc.split(/\s+/).filter(w=>w).length;
+    if (wordCount < 100) { showToast('Placement description must be at least 100 words (' + wordCount + ' entered).', true); return; }
+    empData.format = format; empData.hours = hours; empData.students = students; empData.supervisor = supervisor;
+  }
+  document.getElementById('es' + from).classList.remove('active');
+  document.getElementById('etab' + from).classList.remove('active');
+  document.getElementById('etab' + from).classList.add('done');
+  const next = from + 1;
+  document.getElementById('es' + next).classList.add('active');
+  document.getElementById('etab' + next).classList.add('active');
+  currentEmpStep = next;
+  window.scrollTo(0,180);
+}
+
+function prevEmpStep(from) {
+  document.getElementById('es' + from).classList.remove('active');
+  document.getElementById('etab' + from).classList.remove('active');
+  const prev = from - 1;
+  document.getElementById('es' + prev).classList.add('active');
+  document.getElementById('etab' + prev).classList.add('active');
+  document.getElementById('etab' + from).classList.remove('done');
+  currentEmpStep = prev;
+  window.scrollTo(0,180);
+}
+
+function submitEmpReg() {
+  const allChecked = [...document.querySelectorAll('#es2 .clause')].every(c => c.classList.contains('checked'));
+  if (!allChecked) { showToast('Please check all commitment clauses before submitting.', true); return; }
+  // Populate listing
+  document.getElementById('el-company').textContent = empData.company || '—';
+  document.getElementById('el-industry').textContent = empData.industry || '—';
+  document.getElementById('el-format').textContent = empData.format || '—';
+  document.getElementById('el-hours').textContent = (empData.hours || '—') + ' hrs/week';
+  document.getElementById('el-students').textContent = empData.students || '—';
+  document.getElementById('el-supervisor').textContent = empData.supervisor || '—';
+  if (currentUser) {
+    document.getElementById('edash-company').textContent = empData.company || currentUser.name;
+    document.getElementById('edash-contact').textContent = currentUser.name;
+    document.getElementById('edash-cohortline').textContent = 'Spring 2026 cohort · ' + (empData.company || '');
+  }
+  document.getElementById('empFormMain').style.display = 'none';
+  document.getElementById('empSuccess').classList.add('show');
+  window.scrollTo(0,0);
+}
+
+function handleKNBA(sel) {
+  const link = document.getElementById('knbaJoinLink');
+  link.style.display = sel.value === 'interested' ? 'inline-flex' : 'none';
+}
+
+// ──────────────────────────────
+// TRACK SELECTION
+// ──────────────────────────────
+function toggleTrackSel(el, name) {
+  const grid = el.parentElement;
+  if (grid.id === 'trackSelGrid') {
+    // Student form — unlimited selections
+    if (el.classList.contains('selected')) {
+      el.classList.remove('selected');
+      studentSelectedTracks.delete(name);
+    } else {
+      el.classList.add('selected');
+      studentSelectedTracks.add(name);
+    }
+    const cnt = document.getElementById('trackSelCount');
+    const n = studentSelectedTracks.size;
+    if (cnt) cnt.textContent = n + ' selected';
+  } else {
+    el.classList.toggle('selected');
+  }
+}
+
+// ──────────────────────────────
+// CLAUSES
+// ──────────────────────────────
+function toggleClause(el) { el.classList.toggle('checked'); }
+
+// ──────────────────────────────
+// UPLOAD
+// ──────────────────────────────
+function handleUpload(input) {
+  if (input.files && input.files[0]) {
+    const f = input.files[0];
+    if (f.type !== 'application/pdf') { showToast('Please upload a PDF file only.', true); return; }
+    if (f.size > 2 * 1024 * 1024) { showToast('File exceeds 2MB limit. Please compress your resume.', true); return; }
+    uploadedResume = f;
+    const zone = document.getElementById('uploadZone');
+    zone.classList.add('filled');
+    document.getElementById('uploadLabel').textContent = '✓ Resume uploaded';
+    const info = document.getElementById('uploadFileInfo');
+    document.getElementById('uploadFileName').textContent = f.name;
+    document.getElementById('uploadFileSize').textContent = (f.size / 1024).toFixed(0) + ' KB';
+    info.classList.add('show');
+    showToast('✓ Resume attached: ' + f.name);
+  }
+}
+
+// ──────────────────────────────
+// OTHER ELABORATION
+// ──────────────────────────────
+function handleOther(select, targetId) {
+  const el = document.getElementById(targetId);
+  if (!el) return;
+  el.classList.toggle('show', select.value === 'other');
+}
+
+// ──────────────────────────────
+// PROFANITY FILTER
+// ──────────────────────────────
+const badWords = ['damn','hell','ass','crap','shit','fuck','bitch','bastard','piss','dick','cock','pussy','tits','whore','slut','cunt','motherfuck','nigger','faggot','retard'];
+function containsProfanity(text) { const l = text.toLowerCase(); return badWords.some(w => l.includes(w)); }
+
+// ──────────────────────────────
+// FAQ
+// ──────────────────────────────
+function toggleFaq(el) { el.closest('.faq-item').classList.toggle('open'); }
+
+// ──────────────────────────────
+// MODALS
+// ──────────────────────────────
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+// ──────────────────────────────
+// STUDENT PROFILES
+// ──────────────────────────────
+function renderStudents(list) {
+  const grid = document.getElementById('studentGrid');
+  if (!grid) return;
+  grid.innerHTML = list.map(s => `
+    <div class="scard" onclick="openSProfile(${s.id})">
+      <div class="scard-top">
+        <div class="scard-avatar">${s.name.charAt(0)}</div>
+        <span class="${s.status==='verified'?'badge-v':'badge-p'}">${s.status==='verified'?'Verified Ready':'Pending Review'}</span>
+      </div>
+      <div class="scard-name">${s.name}</div>
+      <div class="scard-school">${s.school} · Grade ${s.grade}</div>
+      <div class="tag-row">${s.tracks.map(t=>`<span class="ttag ${tagClass[t]||'tt-biz'}">${t}</span>`).join('')}</div>
+      <div class="scard-skills">Skills: ${s.skills.slice(0,3).join(', ')}</div>
+      <div class="scard-footer">
+        <div class="avail-label"><strong>${s.availability}</strong> available</div>
+        <button class="btn-intro" onclick="event.stopPropagation();openIntroModal(${s.id})">Request Intro</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterStudents(val) {
+  const q = (typeof val === 'string' ? val : '').toLowerCase();
+  renderStudents(students.filter(s =>
+    !q || s.name.toLowerCase().includes(q) || s.school.toLowerCase().includes(q) ||
+    s.skills.some(sk => sk.toLowerCase().includes(q)) || s.tracks.some(t => t.toLowerCase().includes(q))
+  ));
+}
+
+function openSProfile(id) {
+  const s = students.find(x => x.id === id);
+  if (!s) return;
+  document.getElementById('profileModalContent').innerHTML = `
+    <div class="pmodal-avatar">${s.name.charAt(0)}</div>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px;">
+      <div class="modal-title" style="margin-bottom:0;">${s.name}</div>
+      <span class="${s.status==='verified'?'badge-v':'badge-p'}">${s.status==='verified'?'Verified Ready':'Pending Review'}</span>
+    </div>
+    <div class="modal-sub">${s.school} · Grade ${s.grade}</div>
+    <div class="pmodal-bio">${s.bio}</div>
+    <div class="pmodal-sec">Tracks</div>
+    <div class="tag-row" style="margin-bottom:16px;">${s.tracks.map(t=>`<span class="ttag ${tagClass[t]||'tt-biz'}">${t}</span>`).join('')}</div>
+    <div class="pmodal-sec">Skills</div>
+    <div class="skills-row">${s.skills.map(sk=>`<span class="skill-chip">${sk}</span>`).join('')}</div>
+    <div class="pmeta">
+      <div class="pmeta-item"><div class="pk">Availability</div><div class="pv">${s.availability}</div></div>
+      <div class="pmeta-item"><div class="pk">Commute</div><div class="pv">${s.commute}</div></div>
+      <div class="pmeta-item"><div class="pk">Preferred Start</div><div class="pv">${s.startDate}</div></div>
+      <div class="pmeta-item"><div class="pk">References</div><div class="pv">${s.references}</div></div>
+    </div>
+    <div class="modal-btns">
+      <button class="btn-modal-outline" onclick="showToast('📄 Resume request sent to coordinator')">📄 Request Resume</button>
+      <button class="btn-modal-fill" onclick="closeModal('profileModal');openIntroModal(${s.id})">Request Introduction →</button>
+    </div>
+  `;
+  openModal('profileModal');
+}
+
+let currentIntroId = null;
+function openIntroModal(id) {
+  currentIntroId = id;
+  const s = students.find(x => x.id === id);
+  document.getElementById('introModalSub').textContent = `Requesting an intro for ${s?.name || 'this student'} — coordinator will respond within 1–2 business days.`;
+  openModal('introModal');
+}
+function submitIntro() {
+  const s = students.find(x => x.id === currentIntroId);
+  closeModal('introModal');
+  showToast('✓ Intro request sent for ' + (s?.name || 'student') + ' to coordinator');
+}
+
+// ──────────────────────────────
+// DASHBOARD SECTIONS
+// ──────────────────────────────
+function showSDashSection(sec) {
+  ['overview','application','placement'].forEach(s => {
+    const el = document.getElementById('sdash-' + s);
+    if (el) el.style.display = s === sec ? 'block' : 'none';
+  });
+  document.querySelectorAll('#page-student-dashboard .sidebar-link').forEach((l,i) => {
+    const map = ['overview','application','placement','resources'];
+    l.classList.toggle('active', map[i] === sec);
+  });
+}
+
+function showEDashSection(sec) {
+  ['overview','browse','requests','listing'].forEach(s => {
+    const el = document.getElementById('edash-' + s);
+    if (el) el.style.display = s === sec ? 'block' : 'none';
+  });
+  document.querySelectorAll('#page-employer-dashboard .sidebar-link').forEach((l,i) => {
+    const map = ['overview','browse','requests','listing','resources'];
+    l.classList.toggle('active', map[i] === sec);
+  });
+  if (sec === 'browse') renderStudents(students);
+}
+
+// ──────────────────────────────
+// TOAST
+// ──────────────────────────────
+let toastTimer;
+function showToast(msg, isError) {
+  const t = document.getElementById('toast');
+  document.getElementById('toastMsg').textContent = msg;
+  t.classList.toggle('error', !!isError);
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 3600);
+}
+
+// ──────────────────────────────
+// INIT
+// ──────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  initReveal();
+  // Set date min to today
+  const dateInput = document.getElementById('s3date');
+  if (dateInput) {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth()+1).padStart(2,'0');
+    const dd = String(today.getDate()).padStart(2,'0');
+    dateInput.min = `${yyyy}-${mm}-${dd}`;
+  }
+  // Set hours min to 14
+  const hoursInput = document.getElementById('s3hours');
+  if (hoursInput) hoursInput.min = '14';
+  // Resources return button default hidden
+  document.getElementById('resourcesReturnBtn').innerHTML = '';
+});
+</script>
+</body>
+</html>
